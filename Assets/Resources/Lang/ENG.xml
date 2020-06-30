@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+
+  <English>
+
+
+    <string name="CONTROLS">Controls</string>
+
+    <string name="TOUCH">Touchpad</string>
+    <string name="TOUCH_INFO">Touching the touch pad shoots out an laser pointer</string>
+    <string name="GRAP">Trigger</string>
+    <string name="GRAP_INFO">Pull and hold the trigger to manipulate objects </string>
+    <string name="SELECT_LANGUAGE">Language Selection</string>
+
+
+    <string name="LIGHT_SWITCH">Light Switch</string>
+    <string name="LIGHT_SWITCH_HELP">Turn on/off the microscope by squeezing trigger</string>
+    <string name="LIGHT_SWITCH_INFO">With light switch you turn on light of an micorscope. Light source is usually halogen</string>
+    
+    <string name="MECHANICAL_STAGE">Mechanical stage</string>
+    <string name="MECHANICAL_STAGE_HELP">By moving mechanical stage you can move the sample</string>
+    <string name="MECHANICAL_STAGE_INFO">Mechanical stage can be moved on x- and z-axis</string>
+    
+    <string name="SLIDE">Sample slide</string>
+    <string name="SLIDE_HELP">Pick up sample slide to sample holder. Grap the sample by squeezing and holding the trigger</string>
+    <string name="SLIDE_INFO">The sample on sample slide is covered with cover glass</string>
+    
+    <string name="SLIDE_HOLDER">Slide holder</string>
+    <string name="SLIDE_HOLDER_HELP">Open and close slide holder by squeezing the trigger</string>
+    <string name="SLIDE_HOLDER_INFO">Slide holder holds the slide, holders position can be adjusted on lateral direction</string>
+    
+    <string name="OCULARS">Oculars</string>
+    <string name="OCULARS_HELP">Oculars are adjusted for users own eyes, the sample should be seen as one image</string>
+    <string name="OCULARS_INFO">In this version it is not possible to look the sample trough the oculars</string>
+    
+    <string name="LIGHT_CONTROL">Light volume control</string>
+    <string name="LIGHT_CONTROL_HELP">Grap the control nub by squeezing and holding the trigger and rotate controller to adjust light volume</string>
+    <string name="LIGHT_CONTROL_INFO">Lightsource illuminates the sample for it to be seen clearly</string>
+    
+    <string name="OBJECTIVE_REVOLVER">Objective revolver</string>
+    <string name="OBJECTIVE_REVOLVER_HELP">Start focusing with smallest objective (10x)</string>
+    <string name="OBJECTIVE_REVOLVER_HELP2">Rotate the objective revolver by squeezing and holding the trigger while rotating the controller</string>
+    <string name="OBJECTIVE_REVOLVER_INFO">Objective revolver holds the objectives with different magnifications</string>
+    
+    <string name="IRIS_DIAPHRAGM">Iris diaphgram</string>
+    <string name="IRIS_DIAPHRAGM_HELP">Position of iris diaphgram is dependant of the objectices numeral aperture (not implemented)</string>
+    <string name="IRIS_DIAPHRAGM_INFO">Position should match with numeral aperture of current objectice</string>
+    
+    <string name="FIELD_DIAPHRAGM">Field diaphgram</string>
+    <string name="FIELD_DIAPHRAGM_HELP">Start by closing field diaphgram. Grap the by squeezing and holding the trigger and move controller to left</string>
+    <string name="FIELD_DIAPHRAGM_HELP2">Open the field diaphgram that the hole screen is in use. Squeez and hold the trigger and move controller to right</string>
+    <string name="FIELD_DIAPHRAGM_INFO">Field diaphgram controls width of light column and reduces reflections and scattering improving image quality</string>
+    
+    <string name="CONDENSER">Condenser</string>
+    <string name="CONDENSER_HELP">Condensor is adjusted so that the edges of field diaphgram opening are sharp (not implemented)</string>
+    <string name="CONDENSER_INFO">Condensor focuses light evenly to the sample. Condensors adjustments effects image contrast and brightness</string>
+    
+    <string name="CENTRALIZING_CONTROLS">Centralizing controls</string>
+    <string name="CENTRALIZING_CONTROLS_HELP">Rotate screws until opening is in middle of the screen. Squeez and hold the trigger while rotating controller</string>
+    <string name="CENTRALIZING_CONTROLS_INFO">Centralizing controls are used to get the opening in the middle of the field of view</string>
+    
+    <string name="FOCUS_CONTROLS">Coarse and fine focus controls</string>
+    <string name="COARSE_FOCUS">Coarse focus</string>
+    <string name="COARSE_FOCUS_HELP">Squeeze and hold trigger while rotating controller until picture is focused</string>
+    <string name="COARSE_FOCUS_INFO">Coarse focus allows coarse focusing the image</string>
+    
+    <string name="FINE_FOCUS">Fine focus</string>
+    <string name="FINE_FOCUS_HELP">Squeeze and hold trigger while rotating controller until picture is focused and instruction changes</string>
+    <string name="FINE_FOCUS_INFO">Fine focus allows more accurate focusing control.</string>
+    
+    <string name="DONE">Done</string>
+    <string name="DONE_HELP">Adjusting microscope finished, you can now look this or other samples</string>
+    
+    <string name="EMPTY"></string>
+     
+  </English>
+
+</languages>
