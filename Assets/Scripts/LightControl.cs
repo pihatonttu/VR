@@ -101,7 +101,7 @@ public class LightControl : MonoBehaviour
         if (lightOn)
         {
             tmp = spriteRenderer.color;
-            tmp.a = brightness;
+            tmp.a = Mathf.Min(0.99f, brightness);
             spriteRenderer.color = tmp;
         }
     }

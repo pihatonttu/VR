@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 /// <summary>
 /// Ohjeet ensimmäiselle pelikerralle
@@ -19,6 +21,8 @@ public class HelpController : MonoBehaviour
 
     [SerializeField]
     private float highlightWidth;
+
+    //Ohjepaikat
     [SerializeField]
     private TranslatedText rightHeading;
     [SerializeField]
@@ -31,30 +35,68 @@ public class HelpController : MonoBehaviour
     private TranslatedText leftHelp;
     [SerializeField]
     private TranslatedText leftInfo;
+    //---------------------------------------
 
+    //Korostettavat kohteet
+    //0. Valonappi
     [SerializeField]
-    private GameObject fineControl;//Hienosäätö
+    private GameObject lightSwitch;
+
+    //1. Näytteet
     [SerializeField]
-    private RevolverControl revolver;//Objektiivirevolveri
+    private GameObject[] slides;
+
+    //2. Okulaarit
     [SerializeField]
-    private GameObject lightSwitch;//Valokatkaisin
+    private GameObject[] oculars;
+
+    //3. Valonsäätö
     [SerializeField]
-    private GameObject lightControl;//Kirkkauden säätö rulla 
+    private GameObject lightControl;
+
+    //4. ja 10. Objektiivi revolveri
     [SerializeField]
-    private GameObject slideHolder;//Näytteenpidin
+    private GameObject revolver;
+
+    //5. ja 8. Kenttähimmennin
     [SerializeField]
-    private GameObject[] gameObjects;//
+    private GameObject fieldDiaphragm;
+
+    //6. Kondensori 
     [SerializeField]
-    private GameObject[] slides;//Näytteet
+    private GameObject CONDENSER;
+
+    //7. Keskiöintiruuvit
     [SerializeField]
-    private GameObject[] centralizeControls; //Keskiöintiruuvit
+    private GameObject[] centralizeControls;
+
+    //9. Hieno ja karkea säätö
+    [SerializeField]
+    private GameObject fineControl;
+    [SerializeField]
+    private GameObject coarseControl;
+
+    //Kuvan liikuttelu 
+    //HUOM! ei vielä ohjetta tälle
     [SerializeField]
     private GameObject[] axisNobs;
-    
+    //------------------------------------------------------
 
-    private GameObject currentObj;
-    private int currentIndex = 0;
+    //VANHOJA OHJEJUTTUJA
+
+    //[SerializeField]
+    //private GameObject slideHolder;//Näytteenpidin
+
+    //[SerializeField]
+    //private GameObject[] gameObjects;
+
+    //private GameObject currentObj;
+
+
+    private int currentIndex = -1;
     private bool HelpFinished = false;
+
+    public List<GameObject> HiglightedItems;
 
     [SerializeField]
     bool Test = false;
@@ -63,136 +105,114 @@ public class HelpController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentObj = gameObjects[currentIndex];
+        //currentObj = gameObjects[currentIndex];
         NextInstruction();       
     }
-
-    void Update()
-    {
-        //Testailua varten pikanappi
-        if (Test)
-        {
-            NextInstruction();
-            Test = false;        
-        }
-    }
-
 
     /// <summary>
     /// Ohjeiden eri vaiheet
     /// </summary>
     public void NextInstruction()
     {
+        currentIndex++;
         Debug.Log(currentIndex);
+        UnHighlightAll();
+
         if (HelpFinished)
-        {
             return;
-        }
+
         switch (currentIndex)
         {
             //Valo päälle
-            case 0:
-                ChangeTexts(RIGHT, "LIGHT_SWITCH");
+            case 0:       
                 HighlightItem(lightSwitch);
+                ChangeTexts(RIGHT, "LIGHT_SWITCH");
                 break;
             //Aseta näyte paikalleen
             case 1:
-                UnHighlightLast(currentIndex);
-                HighlightItem(slideHolder);
+                //HighlightItem(slideHolder);
                 HighlightItems(slides);
                 ChangeTexts(RIGHT, "SLIDE_HOLDER");                
                 break;
             //Säädä okulaarit silmille sopiviksi
             case 2:
-                UnHighlightLast(currentIndex);
-                UnHighlightOne(slideHolder);
-                UnHighlightItems(slides);
+                HighlightItems(oculars);
                 ChangeTexts(RIGHT, "OCULARS");           
                 break;
             //Kirkkaudensäätö sopivaksi
             case 3:
-                UnHighlightLast(currentIndex);
+                HighlightItem(lightControl);
                 ChangeTexts(RIGHT, "LIGHT_CONTROL");           
                 break;
             //Valitse 10x objektiivi aluksi
-            case 4:
-                UnHighlightLast(currentIndex);                
-                HighlightItems(axisNobs);
+            case 4:              
+                HighlightItem(revolver);
                 ChangeTexts(RIGHT, "OBJECTIVE_REVOLVER");
                 ChangeTexts(LEFT, "MECHANICAL_STAGE");
                 break;
             //Kenttähimmentimen sulku puoleen väliin
             case 5:
-                UnHighlightLast(currentIndex);                
-                UnHighlightItems(axisNobs);
+                HighlightItem(fieldDiaphragm);
                 ChangeTexts(RIGHT, "FIELD_DIAPHRAGM");
                 ChangeTexts(LEFT, EMPTY);
                 break;
             //Kondensorin säätö kunnes reunat terävät
             case 6:
-                UnHighlightLast(currentIndex);
+                HighlightItem(CONDENSER);
                 ChangeTexts(RIGHT, "CONDENSER");
                 ChangeTexts(LEFT, EMPTY);
                 break;
             //Keskiöintiruuveilla kuva keskelle
             case 7:
-                UnHighlightLast(currentIndex);
                 HighlightItems(centralizeControls);
                 ChangeTexts(RIGHT, "CENTRALIZING_CONTROLS");
                 ChangeTexts(LEFT, EMPTY);
                 break;
             //Kenttähimmennin auki kunnes reunat häviää kuvan ulkopuolelle
             case 8:
-                UnHighlightLast(currentIndex);
-                UnHighlightItems(centralizeControls);
+                HighlightItem(fieldDiaphragm);
                 ChangeTexts(RIGHT, "FIELD_DIAPHRAGM", 2);
                 ChangeTexts(LEFT, EMPTY);
                 break;
             //Kuvan tarkentaminen
             case 9:
-                UnHighlightLast(currentIndex);
                 HighlightItem(fineControl);
+                HighlightItem(coarseControl);
                 ChangeTexts(RIGHT, "COARSE_FOCUS");
                 ChangeTexts(LEFT, "FINE_FOCUS");
                 break;
             //Vaihda objektiivia tarkemmaksi
             case 10:
-                UnHighlightLast(currentIndex);
+                HighlightItem(revolver);
                 ChangeTexts(RIGHT, "OBJECTIVE_REVOLVER", 2);
                 ChangeTexts(LEFT, EMPTY);
                 break;
             //Valmis
             case 11:
-                UnHighlightLast(currentIndex);
                 ChangeTexts(RIGHT, "DONE");
                 ChangeTexts(LEFT, "DONE");
                 currentIndex = 0;
                 HelpFinished = true;
-                break;
-            
+                break;        
             default:
                 break;
         }
         
-        if (currentIndex < gameObjects.Length - 1)
-        {
-            if (currentObj)
-            {
-                HighlightItem(currentObj);
-            }            
-            currentIndex++;
-            currentObj = gameObjects[currentIndex];
-        }
+        //if (currentIndex < gameObjects.Length - 1)
+        //{       
+        //    currentIndex++;
+        //    currentObj = gameObjects[currentIndex];
+        //}
         
         
     }
 
-    /// <summary>
-    /// Vaihdetaan teksti
-    /// </summary>
-    /// <param name="side">Kummalle puolelle</param>
-    /// <param name="_param">Parametri</param>
-    /// <param name="helpTextNumber">Mikä ohje menossa</param>
+    public void NextInstructionButton()
+    {
+        NextInstruction();
+    }
+
+    //Vaihdetaan teksti
     private void ChangeTexts (string side, string _param, int helpTextNumber=1)
     {
         string Param = _param;
@@ -238,18 +258,41 @@ public class HelpController : MonoBehaviour
         }
     }
 
-    //Poista korostus viimeisimmästä
-    private void UnHighlightLast(int index)
+    //Poista korostus kaikista nykyisistä korostetuista esineistä
+    private void UnHighlightAll()
     {
-        gameObjects[index - 1].GetComponent<Outline>().OutlineWidth = ZERO;
-        gameObjects[index - 1].GetComponent<Outline>().OutlineColor = defaultColor;
+        if (HiglightedItems != null)
+        {
+            foreach (GameObject item in HiglightedItems)
+            {
+                if (item.GetComponent<Highlight>())
+                {
+                    item.GetComponent<Highlight>().OutlineWidth = ZERO;
+                    item.GetComponent<Highlight>().OutlineColor = defaultColor;
+                    item.GetComponent<Highlight>().enabled = false;
+                }
+                else
+                    Debug.LogError("Korostus komponenttia ei löytynyt " + item.name);
+            }
+            HiglightedItems.Clear();
+
+            if (Test)
+                Debug.Log("Korostus poistettu kaikista. HighlightLista: " + HiglightedItems.Count);
+        }     
     }
 
     //Poista korostus yhdestä
     private void UnHighlightOne(GameObject item)
     {
-        item.GetComponent<Outline>().OutlineWidth = ZERO;
-        item.GetComponent<Outline>().OutlineColor = defaultColor;
+        if (item.GetComponent<Highlight>())
+        {
+            item.GetComponent<Highlight>().OutlineWidth = ZERO;
+            item.GetComponent<Highlight>().OutlineColor = defaultColor;
+            HiglightedItems.Remove(item);
+            item.GetComponent<Highlight>().enabled = false;
+        }
+        else
+            Debug.LogError("Korostus komponenttia ei löytynyt " + item.name);
     }
 
     //Poista korostus listan esineistä
@@ -257,26 +300,51 @@ public class HelpController : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-            items[i].GetComponent<Outline>().OutlineWidth = ZERO;
-            items[i].GetComponent<Outline>().OutlineColor = defaultColor;
+            if (items[i].GetComponent<Highlight>())
+            {
+                items[i].GetComponent<Highlight>().OutlineWidth = ZERO;
+                items[i].GetComponent<Highlight>().OutlineColor = defaultColor;
+                items[i].GetComponent<Highlight>().enabled = false;
+            }
+            else
+                Debug.LogError("Korostus komponenttia ei löytynyt " + items[i].name);
         }
     }
 
-    //Korosta esineet listasta
+    //Korosta esineet listasta jos niistä löytyy korostus komponentti
     private void HighlightItems(GameObject[] items)
     {
-        for (int i = 0; i < items.Length; i++)
+        foreach (GameObject item in items)
         {
-            items[i].GetComponent<Outline>().OutlineColor = highlightColor;
-            items[i].GetComponent<Outline>().OutlineWidth = highlightWidth;            
+            if (item.GetComponent<Highlight>())
+            {
+                item.GetComponent<Highlight>().enabled = true;
+                item.GetComponent<Highlight>().OutlineColor = highlightColor;
+                item.GetComponent<Highlight>().OutlineWidth = highlightWidth;
+                HiglightedItems.Add(item);
+            } else
+                Debug.LogError("Korostus komponenttia ei löytynyt " + item.name);
         }
     }
 
-    //Korosta yksittäinen esine
+    //Korosta yksittäinen esine jos sillä on korostus komponentti
     private void HighlightItem(GameObject item)
     {
-        item.GetComponent<Outline>().OutlineColor = highlightColor;
-        item.GetComponent<Outline>().OutlineWidth = highlightWidth;
+        if (item.GetComponent<Highlight>())
+        {
+            item.GetComponent<Highlight>().enabled = true;
+            item.GetComponent<Highlight>().OutlineColor = highlightColor;
+            item.GetComponent<Highlight>().OutlineWidth = highlightWidth;
+            HiglightedItems.Add(item);
+            Debug.Log(HiglightedItems);
+            
+
+            if (Test) 
+                Debug.Log("Korostetaan: " + item.name);
+        } else
+        {
+            Debug.LogError("Korostus komponenttia ei löytynyt: " + item.name);
+        }
     }
 
     //Nollaa ohjeet
@@ -286,15 +354,9 @@ public class HelpController : MonoBehaviour
         {
             ChangeTexts(RIGHT, EMPTY);
             ChangeTexts(LEFT, EMPTY);
-            currentObj = gameObjects[0];
+            //currentObj = gameObjects[0];
             NextInstruction();
             Debug.Log("Reset Triggered");
         }
     }   
-
-    //Hae nykyinen ohje objekti
-    public GameObject GetCurrentHelpObject()
-    {
-        return gameObjects[currentIndex -1];
-    }
 }

@@ -43,16 +43,7 @@ public class RevolverControl : MonoBehaviour
 
     void Update()
     {
-        currentRot = transform.localEulerAngles;
 
-        if (!isInHand && !inLockPosition)
-        {
-            SnapToClosestObjective(currentRot);
-        }
-        else
-        {            
-            inLockPosition = false;
-        }
 
     }
 
@@ -68,6 +59,36 @@ public class RevolverControl : MonoBehaviour
     private void OnHandHoverEnd(Hand hand)
     {
         hand.HideGrabHint();
+        currentRot = transform.localEulerAngles;
+        SnapToClosestObjective(currentRot);
+    }
+    //---------------------------------------
+
+    private GrabTypes grabbedWithType;
+    //Tarkistetaan painalluksia jotta voidaan snäpätä revolveri kun napista päästetään irti
+    private void HandHoverUpdate(Hand hand)
+    {
+        GrabTypes startingGrabType = hand.GetGrabStarting();
+        bool isGrabEnding = hand.IsGrabbingWithType(grabbedWithType) == false;
+
+        if (grabbedWithType == GrabTypes.None && startingGrabType != GrabTypes.None)
+        {
+            grabbedWithType = startingGrabType;
+            // Triggeriä alettiin painamaan
+            //Debug.Log("PITÄÄ KIINNI!");
+
+            hand.HideGrabHint();
+        }
+        else if (grabbedWithType != GrabTypes.None && isGrabEnding)
+        {
+            // Triggeristä päästettiin irti
+            //Debug.Log("IRTI KÄDESTÄ!");
+            currentRot = transform.localEulerAngles;
+            SnapToClosestObjective(currentRot);
+
+            grabbedWithType = GrabTypes.None;
+        }
+        
     }
     //-------------------------------------------------
 
@@ -77,6 +98,7 @@ public class RevolverControl : MonoBehaviour
         float closest = FindClosestObjective(rotation);
 
         transform.localEulerAngles = new Vector3(rotation.x, rotation.y, closest);
+        GetComponent<CircularDrive>().outAngle = closest;
         inLockPosition = true;
 
     }

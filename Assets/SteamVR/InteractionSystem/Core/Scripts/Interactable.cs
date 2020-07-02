@@ -8,12 +8,15 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEditor;
 
 namespace Valve.VR.InteractionSystem
 {
     //-------------------------------------------------------------------------
     public class Interactable : MonoBehaviour
     {
+
         [Tooltip("Activates an action set on attach and deactivates on detach")]
         public SteamVR_ActionSet activateActionSetOnAttach;
 
@@ -69,7 +72,6 @@ namespace Valve.VR.InteractionSystem
         [Tooltip("An array of child gameObjects to not render a highlight for. Things like transparent parts, vfx, etc.")]
         public GameObject[] hideHighlight;
 
-
         [System.NonSerialized]
         public Hand attachedToHand;
 
@@ -79,8 +81,7 @@ namespace Valve.VR.InteractionSystem
         public bool isDestroying { get; protected set; }
         public bool isHovering { get; protected set; }
         public bool wasHovering { get; protected set; }
-        
-
+       
         private void Awake()
         {
             skeletonPoser = GetComponent<SteamVR_Skeleton_Poser>();
@@ -222,7 +223,7 @@ namespace Valve.VR.InteractionSystem
                     highlightRenderer.enabled = isHovering && existingRenderer.enabled && existingRenderer.gameObject.activeInHierarchy;
                 }
                 else if (highlightRenderer != null)
-                    highlightRenderer.enabled = false;
+                    highlightRenderer.enabled = true;
             }
         }
 
@@ -241,8 +242,11 @@ namespace Valve.VR.InteractionSystem
                 CreateHighlightRenderers();
                 UpdateHighlightRenderers();
             }
-        }
 
+            //Poistetaan ohjekorostus jos sellainen on
+            if (GetComponent<Highlight>())
+                GetComponent<Highlight>().enabled = false;
+        }
 
         /// <summary>
         /// Called when a Hand stops hovering over this object
@@ -254,6 +258,11 @@ namespace Valve.VR.InteractionSystem
 
             if (highlightOnHover && highlightHolder != null)
                 Destroy(highlightHolder);
+
+
+            //Näytetään taas ohjekorostus jos sellainen on
+            if (GetComponent<Highlight>() && GetComponent<Highlight>().enabled)
+                GetComponent<Highlight>().enabled = true;
         }
 
         protected virtual void Update()
