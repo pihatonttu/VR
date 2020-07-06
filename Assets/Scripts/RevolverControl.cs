@@ -41,12 +41,6 @@ public class RevolverControl : MonoBehaviour
         interactable = GetComponent<CircularDrive>();
     }
 
-    void Update()
-    {
-
-
-    }
-
     //-------------------------------------------------
     //Kun käsi aloittaa hoveerauksen niin näytetään ohje
     private void OnHandHoverBegin(Hand hand)

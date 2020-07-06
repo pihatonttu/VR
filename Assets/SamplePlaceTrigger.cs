@@ -101,6 +101,7 @@ public class SamplePlaceTrigger : MonoBehaviour
     {
         if (insideSnapZone && currentSample != null && !inPlace)
         {
+            Debug.Log("haloo");
             inPlace = true;
             currentSample.transform.position = samplePlace.position;
             currentSample.transform.rotation = samplePlace.rotation;
