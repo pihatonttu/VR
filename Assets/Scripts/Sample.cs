@@ -46,7 +46,7 @@ public class Sample : MonoBehaviour
     //Kun käsi laitetaan triggeri alueelle
     private void OnHandHoverBegin(Hand hand)
     {
-        hand.ShowGrabHint("Ota");
+        hand.ShowGrabHint();
         SampleNameText.gameObject.SetActive(true);      
     }
 

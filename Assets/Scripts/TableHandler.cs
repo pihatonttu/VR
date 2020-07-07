@@ -52,6 +52,8 @@ public class TableHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("Y: " + offsetY);
+        //Debug.Log("X: " + offsetX);
         currentRotTN = tableNub.value;
         currentRotHN = holderNub.value;
         
@@ -97,6 +99,8 @@ public class TableHandler : MonoBehaviour
     {
         offsetY = Mathf.InverseLerp(maxTableY, minTableY, tableMover.transform.localPosition.y);
         offsetX = Mathf.InverseLerp(minHolderX, maxHolderX, holderMover.transform.localPosition.x);
+        //offsetX = 0;
+        //offsetY = 0;
         modifierX = x;
         modifierY = y;
     }

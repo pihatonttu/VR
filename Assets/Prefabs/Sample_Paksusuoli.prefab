@@ -235,8 +235,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3831159552582606082}
   m_LocalRotation: {x: 0.5000003, y: 0.49999976, z: -0.49999976, w: 0.5000003}
-  m_LocalPosition: {x: 0.876, y: 37, z: 0.491}
-  m_LocalScale: {x: 5.181768, y: 16.626646, z: 10000.001}
+  m_LocalPosition: {x: 0.95, y: 37, z: 0.494}
+  m_LocalScale: {x: 5, y: 15, z: 10000.001}
   m_Children: []
   m_Father: {fileID: 3831159552293642622}
   m_RootOrder: 3
@@ -287,16 +287,16 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3831159552582606082}
-  m_Text: "t\xE4ss\xE4 lukee teksti\xE4 kun k\xE4si tulee paikalle"
+  m_Text: Paksusuoli
   m_OffsetZ: 0
-  m_CharacterSize: 0.01
+  m_CharacterSize: 0.02
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 0
   m_FontStyle: 0
-  m_RichText: 1
+  m_RichText: 0
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2

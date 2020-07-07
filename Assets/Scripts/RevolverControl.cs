@@ -39,6 +39,7 @@ public class RevolverControl : MonoBehaviour
         inLockPosition = false;
         currentMag = 0;
         interactable = GetComponent<CircularDrive>();
+        SnapToClosestObjective(currentRot);
     }
 
     //-------------------------------------------------
@@ -53,8 +54,8 @@ public class RevolverControl : MonoBehaviour
     private void OnHandHoverEnd(Hand hand)
     {
         hand.HideGrabHint();
-        currentRot = transform.localEulerAngles;
-        SnapToClosestObjective(currentRot);
+        //currentRot = transform.localEulerAngles;
+        //SnapToClosestObjective(currentRot);
     }
     //---------------------------------------
 

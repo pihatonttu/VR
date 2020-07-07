@@ -115,7 +115,7 @@ public class HelpController : MonoBehaviour
     public void NextInstruction()
     {
         currentIndex++;
-        Debug.Log(currentIndex);
+        //Debug.Log(currentIndex);
         UnHighlightAll();
 
         if (HelpFinished)
@@ -336,9 +336,7 @@ public class HelpController : MonoBehaviour
             item.GetComponent<Highlight>().OutlineColor = highlightColor;
             item.GetComponent<Highlight>().OutlineWidth = highlightWidth;
             HiglightedItems.Add(item);
-            Debug.Log(HiglightedItems);
             
-
             if (Test) 
                 Debug.Log("Korostetaan: " + item.name);
         } else

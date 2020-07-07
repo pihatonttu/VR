@@ -101,7 +101,6 @@ public class SamplePlaceTrigger : MonoBehaviour
     {
         if (insideSnapZone && currentSample != null && !inPlace)
         {
-            Debug.Log("haloo");
             inPlace = true;
             currentSample.transform.position = samplePlace.position;
             currentSample.transform.rotation = samplePlace.rotation;
@@ -155,9 +154,12 @@ public class SamplePlaceTrigger : MonoBehaviour
 
     public void ChangeMonitorImage()
     {
-        MonitorRenderer.material.SetTexture("_MainTex", GetSampleImage(objectiveRevolver.GetCurrentMagnification()));
-        MonitorRenderer.material.SetTextureOffset("_MainTex", new Vector2(table.OffsetX + currentSample.GetComponent<Sample>().OffsetStart.x, table.OffsetY + currentSample.GetComponent<Sample>().OffsetStart.y));
-        table.SetOffSet(currentSample.GetComponent<Sample>().OffsetStart.x, currentSample.GetComponent<Sample>().OffsetStart.y);
+        if (inPlace)
+        {
+            MonitorRenderer.material.SetTexture("_MainTex", GetSampleImage(objectiveRevolver.GetCurrentMagnification()));
+            //MonitorRenderer.material.SetTextureOffset("_MainTex", new Vector2(table.OffsetX + currentSample.GetComponent<Sample>().OffsetStart.x, table.OffsetY + currentSample.GetComponent<Sample>().OffsetStart.y));
+            table.SetOffSet(currentSample.GetComponent<Sample>().OffsetStart.x, currentSample.GetComponent<Sample>().OffsetStart.y);
+        }
     }
 
 }
