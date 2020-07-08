@@ -25,7 +25,7 @@ public class RevolverControl : MonoBehaviour
     [SerializeField]
     HelpController helpController;
     [SerializeField]
-    bool isInHand;
+    //bool isInHand;
     bool firstTouch = true;
     bool secondTouch = false;
     int currentMag;
@@ -46,7 +46,7 @@ public class RevolverControl : MonoBehaviour
     //Kun käsi aloittaa hoveerauksen niin näytetään ohje
     private void OnHandHoverBegin(Hand hand)
     {
-        hand.ShowGrabHint("Tartu kiinni");
+        hand.ShowGrabHint();
     }
     //-------------------------------------------------
 
@@ -54,8 +54,6 @@ public class RevolverControl : MonoBehaviour
     private void OnHandHoverEnd(Hand hand)
     {
         hand.HideGrabHint();
-        //currentRot = transform.localEulerAngles;
-        //SnapToClosestObjective(currentRot);
     }
     //---------------------------------------
 
@@ -70,14 +68,12 @@ public class RevolverControl : MonoBehaviour
         {
             grabbedWithType = startingGrabType;
             // Triggeriä alettiin painamaan
-            //Debug.Log("PITÄÄ KIINNI!");
 
             hand.HideGrabHint();
         }
         else if (grabbedWithType != GrabTypes.None && isGrabEnding)
         {
             // Triggeristä päästettiin irti
-            //Debug.Log("IRTI KÄDESTÄ!");
             currentRot = transform.localEulerAngles;
             SnapToClosestObjective(currentRot);
 
@@ -91,35 +87,34 @@ public class RevolverControl : MonoBehaviour
     private void SnapToClosestObjective(Vector3 rotation)
     {
         float closest = FindClosestObjective(rotation);
-
         transform.localEulerAngles = new Vector3(rotation.x, rotation.y, closest);
-        GetComponent<CircularDrive>().outAngle = closest;
+        interactable.outAngle = closest;
         inLockPosition = true;
-
     }
 
     //Löydä lähin objektiivi
+    //TODO: Snäppää aina lähimpään eikä koskaan tyhjään
     private float FindClosestObjective(Vector3 rotation)
     {
         float ret = 0;
         float rot = rotation.z;
 
-        if (rot > noObjectiveAngle - snapLimit && rot < noObjectiveAngle + snapLimit)
+        if (calculateAngleDistance(rot,noObjectiveAngle) < snapLimit)
         {
             currentMag = 0;
-            ret = noObjectiveAngle;            
+            ret = noObjectiveAngle;
         }
-        else if (rot > objective10xAngle - snapLimit && rot < objective10xAngle + snapLimit)
+        else if (calculateAngleDistance(rot, objective10xAngle) < snapLimit)
         {
             currentMag = 10;
-            ret = objective10xAngle;            
+            ret = objective10xAngle;
         }
-        else if (rot > objective20xAngle - snapLimit && rot < objective20xAngle + snapLimit)
+        else if (calculateAngleDistance(rot, objective20xAngle) < snapLimit)
         {
             currentMag = 20;
             ret = objective20xAngle;
         }
-        else if (rot > objective60xAngle - snapLimit && rot < objective60xAngle + snapLimit)
+        else if (calculateAngleDistance(rot, objective60xAngle) < snapLimit)
         {
             currentMag = 60;
             ret = objective60xAngle;
@@ -133,6 +128,11 @@ public class RevolverControl : MonoBehaviour
         return ret;
     }
 
+    private float calculateAngleDistance(float current,float target)
+    {
+        return Mathf.Abs(Mathf.DeltaAngle(current, target));
+    }
+
     //Hae tämän hetkinen suurennus
     public int GetCurrentMagnification()
     {
@@ -142,7 +142,7 @@ public class RevolverControl : MonoBehaviour
     //Ohjeisiin liittyvä
     public void InHand(bool isHandNow)
     {
-        isInHand = isHandNow;
+        //isInHand = isHandNow;
         //if (firstTouch && currentMag == 10)
         //{
         //    helpController.NextInstruction();
