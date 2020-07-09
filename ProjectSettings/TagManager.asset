@@ -13,6 +13,7 @@ TagManager:
   - ocular
   - LanguageManager
   - switch
+  - Sample
   layers:
   - Default
   - TransparentFX
