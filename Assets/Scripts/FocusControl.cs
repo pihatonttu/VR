@@ -87,6 +87,8 @@ public class FocusControl : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(tableTransform.z);
+        Debug.Log(tableTarget);
         //Tarkitetaan onko karkeasäädön arvo muuttunut
         if (coarseLinearMapping.value != currentCoarseRot)
         {
