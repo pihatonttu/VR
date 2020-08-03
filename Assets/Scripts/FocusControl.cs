@@ -63,7 +63,7 @@ public class FocusControl : MonoBehaviour
     float MinFocus = 0f;
     float MaxFocus = 10f;
     float buffer = 0.2f;
-    float tableTarget = 3.857f;
+    float tableTarget = 3.7f;
     bool firstTouch = true;
 
     Vector3 oldPos;
@@ -87,8 +87,6 @@ public class FocusControl : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(tableTransform.z);
-        Debug.Log(tableTarget);
         //Tarkitetaan onko karkeasäädön arvo muuttunut
         if (coarseLinearMapping.value != currentCoarseRot)
         {
@@ -162,6 +160,12 @@ public class FocusControl : MonoBehaviour
         //Päivitetään napin kierto
         //pivot.localEulerAngles = currentRot;
         //pivotRot = currentRot;
+    }
+
+    public float GetTableHeightComparedToTarget()
+    {
+        float distance = Mathf.Abs(transform.localPosition.z - tableTarget);
+        return distance;
     }
 
     /// <summary>
@@ -253,16 +257,6 @@ public class FocusControl : MonoBehaviour
         transform.localPosition = tablePos;
 
         //Annetaan haluttu sumennus
-        blurMat.SetFloat("_Radius", radius);
-
-        //Jos nappia on liikutettu ekan kerran sopivasti niin vaihdetaan ohjetta
-        if (radius <= buffer && firstTouch)
-        {
-            helpController.NextInstruction();
-            firstTouch = false;
-        }
-
-
-        //Debug.Log($"Focus: {blurMat.GetFloat("_Radius")}");        
+        blurMat.SetFloat("_Radius", radius);   
     }
 }

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Munuainen
   m_EditorClassIdentifier: 
   SampleName: Munuainen
-  TextureOf10Mag: {fileID: 2800000, guid: 3bcc4568155b3c34c9bd601fa5e55070, type: 3}
-  TextureOf20Mag: {fileID: 2800000, guid: c39f0bc42673eb442957b9b99ebf734b, type: 3}
-  TextureOf60Mag: {fileID: 2800000, guid: 3a710512f7e66d945908b933a1896157, type: 3}
+  TextureOf10Mag: {fileID: 2800000, guid: 9c44a28d5f569ca49b1819540b8d0335, type: 3}
+  TextureOf20Mag: {fileID: 2800000, guid: a249af1175eca2c4192b55e9dc02ca6a, type: 3}
+  TextureOf60Mag: {fileID: 2800000, guid: c419572b7eb39dc4c91428d57667ce97, type: 3}
   GameWorldTexture: {fileID: 2800000, guid: 29d9e9d2bcb13c04a911e7e886224c0e, type: 3}
   OffsetStart: {x: 0, y: 0}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Paksusuoli
   m_EditorClassIdentifier: 
   SampleName: Paksusuoli
-  TextureOf10Mag: {fileID: 2800000, guid: be073c78369caae41822fb89fe2ec811, type: 3}
-  TextureOf20Mag: {fileID: 2800000, guid: 7bcf3963d1bebdc4e91ffd6750e94279, type: 3}
-  TextureOf60Mag: {fileID: 2800000, guid: 470ed016425709a4aa266c5c64541cd6, type: 3}
+  TextureOf10Mag: {fileID: 2800000, guid: 122d937992d1b2e4dbb9c15d843f8b0c, type: 3}
+  TextureOf20Mag: {fileID: 2800000, guid: 6a946f69507d2c140ac4aef026fa08de, type: 3}
+  TextureOf60Mag: {fileID: 2800000, guid: 99b0764187c3b7b44845b870e2f3968b, type: 3}
   GameWorldTexture: {fileID: 2800000, guid: 337150aafa69c7c429792c6692f78e62, type: 3}
   OffsetStart: {x: 0, y: 0}

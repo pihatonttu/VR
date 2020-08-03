@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Luu
   m_EditorClassIdentifier: 
   SampleName: Luu
-  TextureOf10Mag: {fileID: 2800000, guid: 44d0920c3ee4cb84fb8f00267d4fd9e8, type: 3}
-  TextureOf20Mag: {fileID: 2800000, guid: 206ac04cd726c8b4e871994727e5d3ba, type: 3}
-  TextureOf60Mag: {fileID: 2800000, guid: 48fe9cd45561d2f4b82d2d10dacd0346, type: 3}
+  TextureOf10Mag: {fileID: 2800000, guid: dcf1efbb7530f50498005a88308c0f94, type: 3}
+  TextureOf20Mag: {fileID: 2800000, guid: 4a9f6f2006d0d0849854f420effcca96, type: 3}
+  TextureOf60Mag: {fileID: 2800000, guid: 9afd6d0c197b66a4b876fa07f0e4ca2f, type: 3}
   GameWorldTexture: {fileID: 2800000, guid: e19bd2f30a012e244b3b23a52b2665c0, type: 3}
   OffsetStart: {x: 0, y: 0}

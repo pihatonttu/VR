@@ -1,8 +1,7 @@
 ﻿
 using UnityEngine;
 /// <summary>
-/// Valon virtanapin animointi
-/// Tän vois tehä samassa kun valon säätö
+/// Valon virtanappi
 /// </summary>
 public class LightToggler : MonoBehaviour
 {
@@ -15,6 +14,12 @@ public class LightToggler : MonoBehaviour
     private Animator animator;
     private bool lightOn = false;
 
+    private HelpController Tutorial;
+
+    private void Awake()
+    {
+        Tutorial = FindObjectOfType<HelpController>();   
+    }
 
     public void ToggleLight()
     {
@@ -29,6 +34,11 @@ public class LightToggler : MonoBehaviour
 
         lightOn = !lightOn;
         lightControl.ToggleLight(lightOn);
+
+    }
+    public bool IsLightOn()
+    {
+        return lightOn;
     }
 
 }

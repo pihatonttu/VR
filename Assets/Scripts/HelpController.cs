@@ -45,6 +45,8 @@ public class HelpController : MonoBehaviour
     //1. Näytteet
     [SerializeField]
     private GameObject[] slides;
+    [SerializeField]
+    private SamplePlaceTrigger samplePlace;
 
     //2. Okulaarit
     [SerializeField]
@@ -101,12 +103,59 @@ public class HelpController : MonoBehaviour
     [SerializeField]
     bool Test = false;
 
+    [SerializeField]
+    bool tutorial = true;
+    [SerializeField]
+    FocusControl fc;
+
 
     // Start is called before the first frame update
     void Start()
     {
         //currentObj = gameObjects[currentIndex];
         NextInstruction();       
+    }
+
+    private void Update()
+    {
+        if (tutorial && currentIndex < 11)
+        {
+
+            //Kaikki ohjevaiheet
+            //TODO: Tähän vois keksiä paremman keinon
+            if (lightSwitch.GetComponent<LightToggler>().IsLightOn() && currentIndex == 0)
+                NextInstruction();
+            else if (samplePlace.IsInPlace() && currentIndex == 1)
+                NextInstruction();
+            else if ((oculars[0].GetComponent<CircularDrive>().outAngle != 0 || oculars[1].GetComponent<CircularDrive>().outAngle != 360) && currentIndex == 2)
+                NextInstruction();
+            else if (lightControl.GetComponent<CircularDrive>().outAngle > 200 && currentIndex == 3)
+                NextInstruction();
+            else if (revolver.GetComponent<RevolverControl>().GetCurrentMagnification() == 10 && currentIndex == 4)
+                NextInstruction();
+            else if (fieldDiaphragm.GetComponent<CircularDrive>().outAngle < -100 && currentIndex == 5)
+                NextInstruction();
+            else if (CONDENSER.GetComponent<CircularDrive>().outAngle != 0 && currentIndex == 6)
+                NextInstruction();
+            else if ((centralizeControls[0].GetComponent<CircularDrive>().outAngle != 0 || centralizeControls[1].GetComponent<CircularDrive>().outAngle != 0) && currentIndex == 7)
+                NextInstruction();
+            else if (fieldDiaphragm.GetComponent<CircularDrive>().outAngle > 35 && currentIndex == 8)
+                NextInstruction();
+            else if (fc.GetTableHeightComparedToTarget() < 0.1f && currentIndex == 9)
+                NextInstruction();
+            else if (revolver.GetComponent<RevolverControl>().GetCurrentMagnification() == 20 && currentIndex == 10)
+                NextInstruction();
+            else if (currentIndex == 11)
+                NextInstruction();
+        }
+    }
+
+    //Mennään ohjeessa taaksepäin
+    public void PreviousInstruction()
+    {
+        //Otetaan kaksi taaksepäin koska nextinstruction lisää yhden alussa
+        currentIndex -= 2;
+        NextInstruction();
     }
 
     /// <summary>
@@ -144,7 +193,7 @@ public class HelpController : MonoBehaviour
                 HighlightItem(lightControl);
                 ChangeTexts(RIGHT, "LIGHT_CONTROL");           
                 break;
-            //Valitse 10x objektiivi aluksi
+            //Valitse 10x objektiivi
             case 4:              
                 HighlightItem(revolver);
                 ChangeTexts(RIGHT, "OBJECTIVE_REVOLVER");

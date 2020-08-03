@@ -46,6 +46,13 @@ public class SamplePlaceTrigger : MonoBehaviour
     [SerializeField]
     Texture emptyImage;
 
+    private HelpController tutorial;
+
+    private void Awake()
+    {
+        tutorial = FindObjectOfType<HelpController>();
+    }
+
     private void Start()
     {
         //Haetaan paikka näytteelle
@@ -109,7 +116,9 @@ public class SamplePlaceTrigger : MonoBehaviour
             //Siirretään näytteenpidin oikein paikalleen
             setSlideHolder();
 
+            //laitetaan kuva näytölle
             ChangeMonitorImage();
+
         }
 
         insideSnapZone = false;
@@ -160,6 +169,10 @@ public class SamplePlaceTrigger : MonoBehaviour
             //MonitorRenderer.material.SetTextureOffset("_MainTex", new Vector2(table.OffsetX + currentSample.GetComponent<Sample>().OffsetStart.x, table.OffsetY + currentSample.GetComponent<Sample>().OffsetStart.y));
             table.SetOffSet(currentSample.GetComponent<Sample>().OffsetStart.x, currentSample.GetComponent<Sample>().OffsetStart.y);
         }
+    }
+    public bool IsInPlace()
+    {
+        return inPlace;
     }
 
 }
