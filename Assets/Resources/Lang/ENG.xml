@@ -12,7 +12,11 @@
     <string name="GRAP_INFO">Pull and hold the trigger to manipulate objects </string>
     <string name="SELECT_LANGUAGE">Language Selection</string>
 
-
+    
+    <string name="HOOD">Hood</string>
+    <string name="HOOD_HELP">Remove hood</string>
+    <string name="HOOD_INFO">Hood is protecting microscope</string>
+    
     <string name="LIGHT_SWITCH">Light Switch</string>
     <string name="LIGHT_SWITCH_HELP">Turn on/off the microscope by squeezing trigger</string>
     <string name="LIGHT_SWITCH_INFO">With light switch you turn on light of an micorscope. Light source is usually halogen</string>

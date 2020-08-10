@@ -74,7 +74,7 @@ public class SamplePlaceTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Tehdään vain jos paikalla ei ole mitään vielä
-        if (!inPlace)
+        if (!inPlace && other.gameObject.tag == "Sample")
         {
             insideSnapZone = true;
             currentSample = other.gameObject;

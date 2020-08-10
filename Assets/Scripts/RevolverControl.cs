@@ -39,11 +39,6 @@ public class RevolverControl : MonoBehaviour
         inLockPosition = false;
         currentMag = 0;
         interactable = GetComponent<CircularDrive>();
-        currentRot = transform.localEulerAngles;
-        
-        //SnapToClosestObjective(currentRot);
-        Debug.Log(currentMag);
-        Debug.Log(currentRot);
     }
 
     //-------------------------------------------------

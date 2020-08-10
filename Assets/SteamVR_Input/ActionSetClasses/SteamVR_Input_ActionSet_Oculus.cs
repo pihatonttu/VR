@@ -24,5 +24,13 @@ namespace Valve.VR
                 return SteamVR_Actions.oculus_NewAction;
             }
         }
+        
+        public virtual SteamVR_Action_Boolean NewAction
+        {
+            get
+            {
+                return SteamVR_Actions.oculus_NewAction;
+            }
+        }
     }
 }

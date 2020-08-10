@@ -80,6 +80,10 @@
     {
       "name": "/actions/Oculus/in/NewAction",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/Oculus/in/NewAction",
+      "type": "boolean"
     }
   ],
   "action_sets": [
