@@ -52,8 +52,8 @@ public class SampleTutorial : MonoBehaviour
             //Jos nykyinen näyte on sama kuin triggeristä poistuva esine
             if (currentSample.gameObject == other.gameObject)
             {
-                currentSample.transform.parent = null;
                 currentSample = null;
+                //currentSample.GetComponent<Rigidbody>().isKinematic = false;
                 inPlace = false;
             }
         }
@@ -69,7 +69,7 @@ public class SampleTutorial : MonoBehaviour
             inPlace = true;
             currentSample.transform.position = samplePlace.position;
             currentSample.transform.rotation = samplePlace.rotation;
-            currentSample.transform.SetParent(samplePlace);
+            //currentSample.GetComponent<Rigidbody>().isKinematic = true;
         }
 
         insideSnapZone = false;

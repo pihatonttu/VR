@@ -76,14 +76,6 @@
       "name": "/actions/mixedreality/in/ExternalCamera",
       "type": "pose",
       "requirement": "optional"
-    },
-    {
-      "name": "/actions/Oculus/in/NewAction",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/Oculus/in/NewAction",
-      "type": "boolean"
     }
   ],
   "action_sets": [
@@ -101,10 +93,6 @@
     },
     {
       "name": "/actions/mixedreality",
-      "usage": "single"
-    },
-    {
-      "name": "/actions/Oculus",
       "usage": "single"
     }
   ],
