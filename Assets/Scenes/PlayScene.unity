@@ -724,6 +724,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.16596659
       objectReference: {fileID: 0}
+    - target: {fileID: 3831159552582606082, guid: 3347789241066fe4c9534c2c54bfda96,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831159552293642620, guid: 3347789241066fe4c9534c2c54bfda96,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3831159552293642618, guid: 3347789241066fe4c9534c2c54bfda96,
         type: 3}
       propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -740,16 +750,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 4543db7f52dfd1544b5e9418098550c5,
         type: 2}
-    - target: {fileID: 3831159552293642620, guid: 3347789241066fe4c9534c2c54bfda96,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831159552582606082, guid: 3347789241066fe4c9534c2c54bfda96,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 3831159552611387138, guid: 3347789241066fe4c9534c2c54bfda96,
         type: 3}
       propertyPath: m_Layer
@@ -5116,6 +5116,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.16596659
       objectReference: {fileID: 0}
+    - target: {fileID: 3831159552582606082, guid: 3347789241066fe4c9534c2c54bfda96,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831159552293642620, guid: 3347789241066fe4c9534c2c54bfda96,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3831159552293642618, guid: 3347789241066fe4c9534c2c54bfda96,
         type: 3}
       propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5132,16 +5142,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 9ccacec77f39b20479a90553e175cca2,
         type: 2}
-    - target: {fileID: 3831159552293642620, guid: 3347789241066fe4c9534c2c54bfda96,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831159552582606082, guid: 3347789241066fe4c9534c2c54bfda96,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 3831159552611387138, guid: 3347789241066fe4c9534c2c54bfda96,
         type: 3}
       propertyPath: m_Layer
@@ -6610,12 +6610,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1. Laita valo p\xE4\xE4lle\n2. Aseta n\xE4yte paikoilleen\n3. S\xE4\xE4d\xE4
-    okulaarit sopiviksi\n4. S\xE4\xE4d\xE4 valon kirkkautta\n5. Valitse 10 x objektiivi\n6.
-    Sulje kentt\xE4himmennint\xE4 noin puoleen\n7. S\xE4\xE4d\xE4 kondensoria kunnes
-    reunat ovat tarkat\n8. Keski\xF6i sulkimen kuvio\n9. Avaa kentt\xE4himmennin kunnes
-    reunat h\xE4vi\xE4v\xE4t\n10. Tarkenna n\xE4ytteeseen\n11. Vaihda objektiivia\n12.
-    Olet valmis"
+  m_Text: "1. Poista huppu\n2. Laita valo p\xE4\xE4lle\n3. Aseta n\xE4yte paikoilleen\n4.
+    S\xE4\xE4d\xE4 okulaarit sopiviksi\n5. S\xE4\xE4d\xE4 valon kirkkautta\n6. Nosta
+    kondensorin linssi yl\xF6s\n7. Valitse 10x objektiivi\n8. Sulje kentt\xE4himmennint\xE4\n9.
+    S\xE4\xE4d\xE4 kondensoria kunnes reunat ovat tarkat\n10. Keski\xF6i sulkimen
+    kuvio\n11. Avaa kentt\xE4himmennin kunnes reunat h\xE4vi\xE4v\xE4t\n12. Tarkenna
+    n\xE4ytteeseen\n13. Vaihda objektiivia\n12. Olet valmis"
 --- !u!222 &1179793863
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8621,6 +8621,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.16596659
       objectReference: {fileID: 0}
+    - target: {fileID: 3831159552582606082, guid: 3347789241066fe4c9534c2c54bfda96,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831159552293642620, guid: 3347789241066fe4c9534c2c54bfda96,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3831159552293642618, guid: 3347789241066fe4c9534c2c54bfda96,
         type: 3}
       propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -8637,16 +8647,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e18377f1848b87746a3b26b472f2288d,
         type: 2}
-    - target: {fileID: 3831159552293642620, guid: 3347789241066fe4c9534c2c54bfda96,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831159552582606082, guid: 3347789241066fe4c9534c2c54bfda96,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
     - target: {fileID: 3831159552611387138, guid: 3347789241066fe4c9534c2c54bfda96,
         type: 3}
       propertyPath: m_Layer
@@ -9279,6 +9279,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.16596659
       objectReference: {fileID: 0}
+    - target: {fileID: 3831159552582606082, guid: 3347789241066fe4c9534c2c54bfda96,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831159552293642620, guid: 3347789241066fe4c9534c2c54bfda96,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3831159552293642618, guid: 3347789241066fe4c9534c2c54bfda96,
         type: 3}
       propertyPath: onDetachFromHand.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -9293,16 +9303,6 @@ PrefabInstance:
         type: 3}
       propertyPath: attachmentFlags
       value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831159552293642620, guid: 3347789241066fe4c9534c2c54bfda96,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3831159552582606082, guid: 3347789241066fe4c9534c2c54bfda96,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3831159552611387138, guid: 3347789241066fe4c9534c2c54bfda96,
         type: 3}
@@ -10845,7 +10845,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Pelin tarkoituksena on opetella k\xF6hler\xF6inti eli valaistusj\xE4rjestelm\xE4n
-    ihanteellinen s\xE4\xE4t\xF6, joka tuottaa parhaan mahdollisen kuvan."
+    ihanteellinen s\xE4\xE4t\xF6, joka tuottaa parhaan mahdollisen mikroskooppi kuvan."
 --- !u!222 &1970814467
 CanvasRenderer:
   m_ObjectHideFlags: 0

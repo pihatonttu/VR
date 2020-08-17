@@ -14,81 +14,100 @@
 	  <string name="SELECT_LANGUAGE">Kielen valinta</string>
 
 
-    <string name="HOOD">Huppu</string>
-    <string name="HOOD_HELP">Poista huppu</string>
-    <string name="HOOD_INFO">Mikroskoopin päällä tulisi aina olla huppu, koska se suojaa laitetta.</string>
+    <string name="HOOD"></string>
+    <string name="HOOD_HELP">Aloita poistamalla mikroskooppia suojaava huppu</string>
+    <string name="HOOD_INFO"></string>
     
+	  <string name="LIGHT_SWITCH"></string>
+	  <string name="LIGHT_SWITCH_HELP">Laita mikroskoopin valo päälle painamalla virtakytkintä</string>
+	  <string name="LIGHT_SWITCH_INFO">Valonlähde on yleensä halogeeni- tai LED-valo.</string>
 
-	  <string name="LIGHT_SWITCH">Valokatkaisin</string>
-	  <string name="LIGHT_SWITCH_HELP">Laita mikroskooppi päälle painamalla virtakytkintä</string>
-	  <string name="LIGHT_SWITCH_INFO">Virtakytkimellä kytketään valonlähteeseen virta päälle ja pois. Valonlähde on yleensä halogeenivalo</string>
+    <string name="LIGHT_CONTROL"></string>
+    <string name="LIGHT_CONTROL_HELP">Säädä valon voimakkuutta valonsäädintä käyttäen</string>
+    <string name="LIGHT_CONTROL_INFO">Näytteessä tulee olla tarpeeksi valoa, että näyte on selkeästi näkyvissä</string>
 
+    <string name="SLIDE_HOLDER"></string>
+    <string name="SLIDE_HOLDER_HELP">Aseta näytelasi ristisiirtopöydälle</string>
+    <string name="SLIDE_HOLDER_INFO">Näytteenpitimen tehtävänä on pitää näyte paikallaan</string>
 
-    <string name="SLIDE_HOLDER">Näytteenpidin</string>
-    <string name="SLIDE_HOLDER_HELP">Näytteenpitimen aukaiset ja suljet painamalla sitä</string>
-    <string name="SLIDE_HOLDER_INFO">Näytteenpitimen tehtävänä on pitää näyte paikallaan, näytteenpidintä voidaan liikuttaa sivusuunnassa.</string>
+    <string name="MECHANICAL_STAGE"></string>
+    <string name="MECHANICAL_STAGE_HELP">Siirrä Ristisiirtopöytää saadaksesi näytteen näkyville</string>
+    <string name="MECHANICAL_STAGE_INFO">Ristisiirtopöytää voi liikuttaa x- ja z-suunnissa</string>
+    
+    <string name="OCULARS"></string>
+    <string name="OCULARS_HELP">Kokeile okulaarien säätämistä. Okulaarit tulisi säätää niin että saadaan yhtenäinen kuva</string>
+    <string name="OCULARS_INFO">Tässä versiossa sovellusta, objektiivien läpi katsominen ei ole mahdollista</string>
 
-    <string name="MECHANICAL_STAGE">Ristisiirtopöytä</string>
-	  <string name="MECHANICAL_STAGE_HELP">Ristisiirtopöytää liikuttamalla siirrä näyte haluttuun kohtaan</string>
-	  <string name="MECHANICAL_STAGE_INFO">Ristisiirtopöytää voi liikuttaa x- ja z-suunnissa</string>
+    <string name="LIGHT_CONTROL2"></string>
+    <string name="LIGHT_CONTROL2_HELP">Säädä tarvittaessa valon voimakkuutta näytteelle sopivaksi</string>
 
+    <string name="CONDENSER2"></string>
+    <string name="CONDENSER2_HELP">Tässä vaiheessa pitäisi nostaa kondensorin linssi ylös ja tarvittaessa säätää valon voimakkuutta.</string>
+    <string name="CONDENSER2_INFO">Kosketa kondensoria päästäksesi eteenpäin</string>
 
+    <string name="OBJECTIVE_REVOLVER_HELP">Valitse köhleröintiin 10x objektiivi</string>
+    
+    <string name="FIELD_DIAPHRAGM"></string>
+    <string name="FIELD_DIAPHRAGM_HELP">Sulje kenttähimmennintä vähintään puolet näkökentästä</string>
+    <string name="FIELD_DIAPHRAGM_INFO">Kenttähimmentimen tehtävänä on säädellä näytteeseen osuvan valopylvään leveyttä sekä vähentää valon heijastuksia sekä sirontaa parantaen näin kuvan laatua</string>
+
+    <string name="CONDENSER"></string>
+    <string name="CONDENSER_HELP">Tässä vaiheessa tulisi säätää kondensorin korkeudella kenttähimmentimen reunat teräväksi</string>
+    <string name="CONDENSER_INFO">Kondensorin tehtävänä keskittää valo tasaisesti näytteeseen. Kosketa kondensoria päästäksesi eteenpäin</string>
+
+    <string name="CENTRALIZING_CONTROLS"></string>
+    <string name="CENTRALIZING_CONTROLS_HELP">Kierrä keskiöintiruuveja, kunnes kenttähimmentimen reunat on keskellä näkökenttää</string>
+    <string name="CENTRALIZING_CONTROLS_INFO">Keskiöintiruuveilla keskitetään kuva keskelle näkökenttää</string>
+
+    <string name="FIELD_DIAPHRAGM_HELP2">Avaa kenttähimmenintä niin, että kenttähimmentimen reunat eivät ole näkyvissä</string>
+
+    <string name="COARSE_FOCUS"></string>
+    <string name="COARSE_FOCUS_HELP">Tarkenna kuva tarvittaessa karkea- ja hienosäätörullista</string>
+    <string name="COARSE_FOCUS_INFO">Säätörullista tarkennetaan kuva teräväksi</string>
+
+    <string name="OBJECTIVE_REVOLVER_HELP2">Kokeile eri suuruisia objektiiveja</string>
+    <string name="OBJECTIVE_REVOLVER_INFO">Objektiivirevolveriin voi vaihtaa käyttötarkoituksen mukaiset objektiivit</string>
+
+    <string name="DONE"></string>
+    <string name="DONE_HELP">Mikroskoopin köhleröinti on nyt valmis! Hienoa!</string>
+
+    <string name="EMPTY"></string>
+    
+    
+    
+    
+    <string name="FINE_FOCUS"></string>
+    <string name="FINE_FOCUS_HELP"></string>
+    <string name="FINE_FOCUS_INFO"></string>
+    
     <string name="SLIDE">Näytelevy</string>
 	  <string name="SLIDE_HELP">Näytelasi nostetaan näytteenpitimeen. Ota näytteestä kiinni pitämällä liipaisinta pohjassa.</string>
 	  <string name="SLIDE_INFO">Näytelasilla oleva näyte on päällystetty vielä peitinlasilla</string>
 
+    <string name="OBJECTIVE_REVOLVER"></string>	  
+	  
 
-    <string name="OCULARS">Okulaarit</string>
-	  <string name="OCULARS_HELP">Okulaarit säädetään omille silmille sopiviksi, jotta näyte näkyisi yhtenäisenä kuvana niiden läpi</string>
-	  <string name="OCULARS_INFO">Tässä versiossa sovellusta, ei objektiivien läpi näytteiden tarkastelu ole mahdollista</string>
-
-
-    <string name="LIGHT_CONTROL">Valonsäädin</string>
-	  <string name="LIGHT_CONTROL_HELP">Ota valonlähteestä kiinni painamalla liipaisinta ja kiertämällä ohjainta</string>
-	  <string name="LIGHT_CONTROL_INFO">Valonlähteen tehtävänä on tuoda näytteeseen tarpeeksi valoa, että näyte olisi selkeästi nähtävillä</string>
-
-
-    <string name="OBJECTIVE_REVOLVER">Objektiivirevolveri</string>	  
-	  <string name="OBJECTIVE_REVOLVER_HELP">Aloita kohdennus pienimmällä objektiivilla (10x)</string>
-	  <string name="OBJECTIVE_REVOLVER_HELP2">Objektiivirevolveria käännät painamalla liipaisinta ja kiertämällä ohjainta</string>
-	  <string name="OBJECTIVE_REVOLVER_INFO">Objektiivirevolverissa on kiinni eri suurennoksella olevia objektiiveja</string>
 
     <string name="IRIS_DIAPHRAGM">Apertuurihimmennin</string>
 	  <string name="IRIS_DIAPHRAGM_HELP">Apertuurihimmentimen asento määräytyy objektiivin numeerisen apertuurin mukaan (Ei implementoitu)</string>
 	  <string name="IRIS_DIAPHRAGM_INFO">Apertuurihimmentimen asetus määräytyy kulloinkin käytössä olevan objektiivin mukaan</string>
 
 
-    <string name="FIELD_DIAPHRAGM">Kenttähimmennin</string>
-	  <string name="FIELD_DIAPHRAGM_HELP">Aloita sulkemalla kenttähimmennin. Pidä liipaisin pohjassa ja siirrä ohjainta vasemmalle</string>
-	  <string name="FIELD_DIAPHRAGM_HELP2">Avaa kenttähimmenintä niin että koko kuva on näkyvissä ruudulla. Pidä liipaisinta pohjassa ja siirrä ohjainta oikealle</string>
-	  <string name="FIELD_DIAPHRAGM_INFO">Kenttähimmentimen tehtävänä on säädellä näytteeseen osuvan valopylvään leveyttä sekä vähentää valon heijastuksia sekä sirontaa parantaen näin kuvan laatua</string>
+    
+
+    
 
 
-    <string name="CONDENSER">Kondensori</string>
-	  <string name="CONDENSER_HELP">Kondensoria säädetään niin että kenttähimmentimen reunat ovat terävät (ei implementoitu)</string>
-	  <string name="CONDENSER_INFO">Kondensorin tehtävänä keskittää valo tasaisesti näytteeseen ja sen säädöt vaikuttavat olennaisesti kontrastiin sekä kirkkauteen</string>
 
-
-    <string name="CENTRALIZING_CONTROLS">Keskiöintiruuvit</string>
-	  <string name="CENTRALIZING_CONTROLS_HELP">Kierrä keskiöintiruuveja, kunnes aukko on keskellä näkökenttää pitämällä liipaisin pohjassa ja kiertämällä rannetta</string>
-	  <string name="CENTRALIZING_CONTROLS_INFO">Keskiöintiruuveilla keskitetään aukko keskelle näkökenttää</string>
 
 
     <string name="FOCUS_CONTROLS">Karkea- ja hienosäätö</string>
-	  <string name="COARSE_FOCUS">Karkeasäätö</string>
-    <string name="COARSE_FOCUS_HELP">Pidä liipaisinta pohjassa ja kierrä ohjainta kunnes kuva on terävä</string>
-    <string name="COARSE_FOCUS_INFO">Karkeasäätöruuvista tehdään karkeasäätö kuvan terävyydelle</string>
 
 
-    <string name="FINE_FOCUS">Hienosäätö</string>
-    <string name="FINE_FOCUS_HELP">Pidä liipaisinta pohjassa ja kierrä ohjainta tarpeen mukaan. Tarkenna kuvaa kunnes seuraava ohje ilmestyy</string>
-    <string name="FINE_FOCUS_INFO">Hienosäätöruuvista tehdään tarkempi terävyydensäätö.</string>
 
 
-    <string name="DONE">Valmis</string>
-	  <string name="DONE_HELP">Näytteen säätäminen on nyt valmis. Voit tarkastella kyseistä näytettä tai tarkastella seuraavaa näytettä</string>
     
-    <string name="EMPTY"></string>
+    
     
   </Finnish>
   
