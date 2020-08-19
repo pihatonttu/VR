@@ -36,8 +36,8 @@ public class RevolverControl : MonoBehaviour
 
     void Start()
     {        
-        inLockPosition = false;
-        currentMag = 0;
+        inLockPosition = true;
+        currentMag = 20;
         interactable = GetComponent<CircularDrive>();
     }
 

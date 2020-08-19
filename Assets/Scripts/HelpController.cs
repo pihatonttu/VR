@@ -99,7 +99,7 @@ public class HelpController : MonoBehaviour
     //private GameObject currentObj;
 
 
-    private int currentIndex = -1;
+    public int currentIndex = -1;
     private bool HelpFinished = false;
 
     public List<GameObject> HiglightedItems;
@@ -122,36 +122,46 @@ public class HelpController : MonoBehaviour
 
     private void Update()
     {
-        if (tutorial && currentIndex < 12)
+        if (tutorial && currentIndex < 15)
         {
+            float tmp = 0;
 
             //Kaikki ohjevaiheet
             //TODO: Tähän vois keksiä paremman keinon
             if (hood.GetComponent<CheckForHood>().IsHoodOn == false && currentIndex == 0)
                 NextInstruction();
-            else if (lightSwitch.GetComponent<LightToggler>().IsLightOn() && currentIndex == 1)
+            if (lightSwitch.GetComponent<LightToggler>().IsLightOn() && currentIndex == 1)
                 NextInstruction();
-            else if (samplePlace.IsInPlace() && currentIndex == 2)
+            if (lightControl.GetComponent<CircularDrive>().outAngle > 100 && currentIndex == 2)
                 NextInstruction();
-            else if ((oculars[0].GetComponent<CircularDrive>().outAngle != 0 || oculars[1].GetComponent<CircularDrive>().outAngle != 360) && currentIndex == 3)
+            if (samplePlace.IsInPlace() && currentIndex == 3)
                 NextInstruction();
-            else if (lightControl.GetComponent<CircularDrive>().outAngle > 200 && currentIndex == 4)
+            if ((axisNobs[0].GetComponent<CircularDrive>().outAngle != 0 || axisNobs[1].GetComponent<CircularDrive>().outAngle != 0) && currentIndex == 4)
                 NextInstruction();
-            else if (revolver.GetComponent<RevolverControl>().GetCurrentMagnification() == 10 && currentIndex == 5)
+            if ((oculars[0].GetComponent<CircularDrive>().outAngle != 0 || oculars[1].GetComponent<CircularDrive>().outAngle != 360) && currentIndex == 5)
                 NextInstruction();
-            else if (fieldDiaphragm.GetComponent<CircularDrive>().outAngle < -100 && currentIndex == 6)
+            if (lightControl.GetComponent<CircularDrive>().outAngle > 200 && currentIndex == 6)
                 NextInstruction();
-            else if (CONDENSER.GetComponent<CircularDrive>().outAngle != 0 && currentIndex == 7)
+            if (CONDENSER.GetComponent<CircularDrive>().outAngle != 0 && currentIndex == 7)
                 NextInstruction();
-            else if ((centralizeControls[0].GetComponent<CircularDrive>().outAngle != 0 || centralizeControls[1].GetComponent<CircularDrive>().outAngle != 0) && currentIndex == 8)
+            if (revolver.GetComponent<RevolverControl>().GetCurrentMagnification() == 10 && currentIndex == 8)
                 NextInstruction();
-            else if (fieldDiaphragm.GetComponent<CircularDrive>().outAngle > 35 && currentIndex == 9)
+            if (fieldDiaphragm.GetComponent<CircularDrive>().outAngle < -100 && currentIndex == 9)
+            {
                 NextInstruction();
-            else if (fc.GetTableHeightComparedToTarget() < 0.1f && currentIndex == 10)
+                tmp = CONDENSER.GetComponent<CircularDrive>().outAngle;
+            }
+            if (CONDENSER.GetComponent<CircularDrive>().outAngle != tmp && currentIndex == 10)
                 NextInstruction();
-            else if (revolver.GetComponent<RevolverControl>().GetCurrentMagnification() == 20 && currentIndex == 11)
+            if ((centralizeControls[0].GetComponent<CircularDrive>().outAngle != 0 || centralizeControls[1].GetComponent<CircularDrive>().outAngle != 0) && currentIndex == 11)
                 NextInstruction();
-            else if (currentIndex == 12)
+            if (fieldDiaphragm.GetComponent<CircularDrive>().outAngle > 150 && currentIndex == 12)
+                NextInstruction();
+            if (fc.GetTableHeightComparedToTarget() < 0.1f && currentIndex == 13)
+                NextInstruction();
+            if (revolver.GetComponent<RevolverControl>().GetCurrentMagnification() != 10 && revolver.GetComponent<RevolverControl>().GetCurrentMagnification() != 0 && currentIndex == 14)
+                NextInstruction();
+            if (currentIndex == 15)
                 NextInstruction();
         }
     }
@@ -186,70 +196,76 @@ public class HelpController : MonoBehaviour
             case 1:       
                 HighlightItem(lightSwitch);
                 ChangeTexts(RIGHT, "LIGHT_SWITCH");
+                break;          
+            //Kirkkaudensäätö sopivaksi
+            case 2:
+                HighlightItem(lightControl);
+                ChangeTexts(RIGHT, "LIGHT_CONTROL");
                 break;
             //Aseta näyte paikalleen
-            case 2:
-                //HighlightItem(slideHolder);
-                HighlightItems(slides);
-                ChangeTexts(RIGHT, "SLIDE_HOLDER");                
-                break;
-            //Säädä okulaarit silmille sopiviksi
             case 3:
-                HighlightItems(oculars);
-                ChangeTexts(RIGHT, "OCULARS");           
-                break;
-            //Kirkkaudensäätö sopivaksi
+                HighlightItems(slides);
+                ChangeTexts(RIGHT, "SLIDE_HOLDER");
+                break;     
+            //Ristisiirtopöydän siirto
             case 4:
-                HighlightItem(lightControl);
-                ChangeTexts(RIGHT, "LIGHT_CONTROL");           
-                break;
-            //Valitse 10x objektiivi
-            case 5:              
-                HighlightItem(revolver);
-                ChangeTexts(RIGHT, "OBJECTIVE_REVOLVER");
-                ChangeTexts(LEFT, "MECHANICAL_STAGE");
-                break;
-            //Kenttähimmentimen sulku puoleen väliin
+                HighlightItems(axisNobs);
+                ChangeTexts(RIGHT, "MECHANICAL_STAGE");
+                break;       
+            //Säädä okulaarit silmille sopiviksi
+            case 5:
+                HighlightItems(oculars);
+                ChangeTexts(RIGHT, "OCULARS");
+                break;     
+            //Valonsäätö tarvittaessa
             case 6:
-                HighlightItem(fieldDiaphragm);
-                ChangeTexts(RIGHT, "FIELD_DIAPHRAGM");
-                ChangeTexts(LEFT, EMPTY);
+                HighlightItem(lightControl);
+                ChangeTexts(RIGHT, "LIGHT_CONTROL2");
                 break;
-            //Kondensorin säätö kunnes reunat terävät
+            //Kondensorin korkeuden säätö ylös
             case 7:
                 HighlightItem(CONDENSER);
                 ChangeTexts(RIGHT, "CONDENSER");
-                ChangeTexts(LEFT, EMPTY);
-                break;
-            //Keskiöintiruuveilla kuva keskelle
+                break;          
+            //Valitse 10x objektiivi
             case 8:
-                HighlightItems(centralizeControls);
-                ChangeTexts(RIGHT, "CENTRALIZING_CONTROLS");
-                ChangeTexts(LEFT, EMPTY);
+                HighlightItem(revolver);
+                ChangeTexts(RIGHT, "OBJECTIVE_REVOLVER");
                 break;
-            //Kenttähimmennin auki kunnes reunat häviää kuvan ulkopuolelle
+            //Kenttähimmentimen sulku vähintään puoleen väliin
             case 9:
                 HighlightItem(fieldDiaphragm);
-                ChangeTexts(RIGHT, "FIELD_DIAPHRAGM", 2);
-                ChangeTexts(LEFT, EMPTY);
+                ChangeTexts(RIGHT, "FIELD_DIAPHRAGM");
+                break;    
+            //Kondensorin säätö kunnes reunat terävät
+            case 10:
+                HighlightItem(CONDENSER);
+                ChangeTexts(RIGHT, "CONDENSER2");
+                break;
+            //Keskiöintiruuveilla aukko keskelle
+            case 11:
+                HighlightItems(centralizeControls);
+                ChangeTexts(RIGHT, "CENTRALIZING_CONTROLS");
+                break;
+            //Kenttähimmennin auki kunnes reunat häviää kuvan ulkopuolelle
+            case 12:
+                HighlightItem(fieldDiaphragm);
+                ChangeTexts(RIGHT, "FIELD_DIAPHRAGM2");
                 break;
             //Kuvan tarkentaminen
-            case 10:
+            case 13:
                 HighlightItem(fineControl);
                 HighlightItem(coarseControl);
                 ChangeTexts(RIGHT, "COARSE_FOCUS");
-                ChangeTexts(LEFT, "FINE_FOCUS");
                 break;
-            //Vaihda objektiivia tarkemmaksi
-            case 11:
+            //Vaihda objektiivia
+            case 14:
                 HighlightItem(revolver);
-                ChangeTexts(RIGHT, "OBJECTIVE_REVOLVER", 2);
-                ChangeTexts(LEFT, EMPTY);
+                ChangeTexts(RIGHT, "OBJECTIVE_REVOLVER2");
                 break;
             //Valmis
-            case 12:
+            case 15:
                 ChangeTexts(RIGHT, "DONE");
-                ChangeTexts(LEFT, "DONE");
                 currentIndex = 0;
                 HelpFinished = true;
                 break;        
@@ -286,12 +302,12 @@ public class HelpController : MonoBehaviour
                 rightHelp.ChangeParam(EMPTY);
                 rightInfo.ChangeParam(EMPTY);
             }
-            else
-            {
-                leftHeading.ChangeParam(EMPTY);
-                leftHelp.ChangeParam(EMPTY);
-                leftInfo.ChangeParam(EMPTY);
-            }
+            //else
+            //{
+            //    leftHeading.ChangeParam(EMPTY);
+            //    leftHelp.ChangeParam(EMPTY);
+            //    leftInfo.ChangeParam(EMPTY);
+            //}
             return;
         }
         //Jos parametrina ei tullut emptyä niin lisätään ohjeet "side":n puolelle
@@ -305,16 +321,16 @@ public class HelpController : MonoBehaviour
             {
                 helpParam = "_HELP";
             }
-            rightHeading.ChangeParam(Param);            
+            //rightHeading.ChangeParam(Param);            
             rightInfo.ChangeParam(Param + "_INFO");            
             rightHelp.ChangeParam(Param + helpParam);
         }
-        else if (side == LEFT)
-        {
-            leftHeading.ChangeParam(Param);
-            leftHelp.ChangeParam(Param + helpParam);
-            leftInfo.ChangeParam(Param + "_INFO");
-        }
+        //else if (side == LEFT)
+        //{
+        //    leftHeading.ChangeParam(Param);
+        //    leftHelp.ChangeParam(Param + helpParam);
+        //    leftInfo.ChangeParam(Param + "_INFO");
+        //}
     }
 
     //Poista korostus kaikista nykyisistä korostetuista esineistä
@@ -410,7 +426,7 @@ public class HelpController : MonoBehaviour
         if (!HelpFinished)
         {
             ChangeTexts(RIGHT, EMPTY);
-            ChangeTexts(LEFT, EMPTY);
+            //ChangeTexts(LEFT, EMPTY);
             //currentObj = gameObjects[0];
             NextInstruction();
             Debug.Log("Reset Triggered");

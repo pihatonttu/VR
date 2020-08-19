@@ -41,9 +41,9 @@
     <string name="LIGHT_CONTROL2"></string>
     <string name="LIGHT_CONTROL2_HELP">Säädä tarvittaessa valon voimakkuutta näytteelle sopivaksi</string>
 
-    <string name="CONDENSER2"></string>
-    <string name="CONDENSER2_HELP">Tässä vaiheessa pitäisi nostaa kondensorin linssi ylös ja tarvittaessa säätää valon voimakkuutta.</string>
-    <string name="CONDENSER2_INFO">Kosketa kondensoria päästäksesi eteenpäin</string>
+    <string name="CONDENSER"></string>
+    <string name="CONDENSER_HELP">Tässä vaiheessa pitäisi nostaa kondensorin linssi ylös ja tarvittaessa säätää valon voimakkuutta.</string>
+    <string name="CONDENSER_INFO">Kosketa kondensoria päästäksesi eteenpäin</string>
 
     <string name="OBJECTIVE_REVOLVER_HELP">Valitse köhleröintiin 10x objektiivi</string>
     
@@ -51,22 +51,22 @@
     <string name="FIELD_DIAPHRAGM_HELP">Sulje kenttähimmennintä vähintään puolet näkökentästä</string>
     <string name="FIELD_DIAPHRAGM_INFO">Kenttähimmentimen tehtävänä on säädellä näytteeseen osuvan valopylvään leveyttä sekä vähentää valon heijastuksia sekä sirontaa parantaen näin kuvan laatua</string>
 
-    <string name="CONDENSER"></string>
-    <string name="CONDENSER_HELP">Tässä vaiheessa tulisi säätää kondensorin korkeudella kenttähimmentimen reunat teräväksi</string>
-    <string name="CONDENSER_INFO">Kondensorin tehtävänä keskittää valo tasaisesti näytteeseen. Kosketa kondensoria päästäksesi eteenpäin</string>
+    <string name="CONDENSER2"></string>
+    <string name="CONDENSER2_HELP">Tässä vaiheessa tulisi säätää kondensorin korkeudella kenttähimmentimen reunat teräväksi</string>
+    <string name="CONDENSER2_INFO">Kondensorin tehtävänä keskittää valo tasaisesti näytteeseen. Kosketa kondensoria päästäksesi eteenpäin</string>
 
     <string name="CENTRALIZING_CONTROLS"></string>
     <string name="CENTRALIZING_CONTROLS_HELP">Kierrä keskiöintiruuveja, kunnes kenttähimmentimen reunat on keskellä näkökenttää</string>
     <string name="CENTRALIZING_CONTROLS_INFO">Keskiöintiruuveilla keskitetään kuva keskelle näkökenttää</string>
 
-    <string name="FIELD_DIAPHRAGM_HELP2">Avaa kenttähimmenintä niin, että kenttähimmentimen reunat eivät ole näkyvissä</string>
+    <string name="FIELD_DIAPHRAGM2_HELP">Avaa kenttähimmenintä niin, että kenttähimmentimen reunat eivät ole näkyvissä</string>
 
     <string name="COARSE_FOCUS"></string>
     <string name="COARSE_FOCUS_HELP">Tarkenna kuva tarvittaessa karkea- ja hienosäätörullista</string>
     <string name="COARSE_FOCUS_INFO">Säätörullista tarkennetaan kuva teräväksi</string>
 
-    <string name="OBJECTIVE_REVOLVER_HELP2">Kokeile eri suuruisia objektiiveja</string>
-    <string name="OBJECTIVE_REVOLVER_INFO">Objektiivirevolveriin voi vaihtaa käyttötarkoituksen mukaiset objektiivit</string>
+    <string name="OBJECTIVE_REVOLVER2_HELP">Kokeile eri suuruisia objektiiveja</string>
+    <string name="OBJECTIVE_REVOLVER2_INFO">Objektiivirevolveriin voi vaihtaa käyttötarkoituksen mukaiset objektiivit</string>
 
     <string name="DONE"></string>
     <string name="DONE_HELP">Mikroskoopin köhleröinti on nyt valmis! Hienoa!</string>
