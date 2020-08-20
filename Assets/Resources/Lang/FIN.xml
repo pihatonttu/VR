@@ -31,11 +31,11 @@
     <string name="SLIDE_HOLDER_INFO">Näytteenpitimen tehtävänä on pitää näyte paikallaan</string>
 
     <string name="MECHANICAL_STAGE"></string>
-    <string name="MECHANICAL_STAGE_HELP">Siirrä Ristisiirtopöytää saadaksesi näytteen näkyville</string>
+    <string name="MECHANICAL_STAGE_HELP">Siirrä Ristisiirtopöytää saadaksesi näyte näkyville</string>
     <string name="MECHANICAL_STAGE_INFO">Ristisiirtopöytää voi liikuttaa x- ja z-suunnissa</string>
     
     <string name="OCULARS"></string>
-    <string name="OCULARS_HELP">Kokeile okulaarien säätämistä. Okulaarit tulisi säätää niin että saadaan yhtenäinen kuva</string>
+    <string name="OCULARS_HELP">Kokeile okulaarien säätämistä. Okulaarit tulisi säätää omille silmille sopivaksi</string>
     <string name="OCULARS_INFO">Tässä versiossa sovellusta, objektiivien läpi katsominen ei ole mahdollista</string>
 
     <string name="LIGHT_CONTROL2"></string>

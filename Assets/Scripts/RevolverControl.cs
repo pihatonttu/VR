@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
+using UnityEngine.UI;
 
 /// <summary>
 /// Objektiivi revolverin ohjaus
@@ -34,11 +35,14 @@ public class RevolverControl : MonoBehaviour
 
     CircularDrive interactable;
 
+    public Text MagnificationText;
+
     void Start()
     {        
         inLockPosition = true;
         currentMag = 20;
         interactable = GetComponent<CircularDrive>();
+        MagnificationText.text = "Objektiivi: " + currentMag + "x";
     }
 
     //-------------------------------------------------
@@ -89,6 +93,7 @@ public class RevolverControl : MonoBehaviour
         transform.localEulerAngles = new Vector3(rotation.x, rotation.y, closest);
         interactable.outAngle = closest;
         inLockPosition = true;
+        MagnificationText.text = "Objektiivi: " + currentMag + "x";
     }
 
     //Löydä lähin objektiivi
