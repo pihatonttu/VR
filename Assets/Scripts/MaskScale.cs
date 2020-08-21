@@ -7,13 +7,11 @@ using Valve.VR.InteractionSystem;
 public class MaskScale : MonoBehaviour
 {
     [SerializeField]
-    LinearMapping DiaphragmRing;
-    [SerializeField]
     HelpController helpController;
     bool firstTouch = true;
     bool secondTouch = false;
     public float scale = 0.5f;
-    float minScale = 0.2f;
+    float minScale = 0f;
     float maxScale = 2f;
     float shapeTreshold = 0.75f;
     float alphaCutOffUpper = 0.3f;
@@ -21,41 +19,38 @@ public class MaskScale : MonoBehaviour
     SpriteMask spriteMask;
     float oldRot;
 
+    [SerializeField]
+    private Transform RingTransform;
+    [SerializeField]
+    private CircularDrive RingCircular;
+
 
     private void Start()
     {
         spriteMask = GetComponent<SpriteMask>();
-        oldRot = DiaphragmRing.value;
+        oldRot = RingTransform.rotation.z;
     }
 
     // Update is called once per frame
     void Update()
     {
         //change scale (size of opening based on diaphram rings rotation.
-        float currentRotation = DiaphragmRing.value;
+        float currentRotation = Mathf.Clamp(RingCircular.outAngle/100,minScale,maxScale);
+
         if (currentRotation != oldRot)
-        {            
-            if (currentRotation < oldRot && scale > minScale)
-            {
-                scale -= 0.01f;
-            }
-            else if (currentRotation > oldRot && scale < maxScale)
-            {
-                scale += 0.01f;
-            }
-            if (firstTouch && scale <= minScale)
-            {
-                firstTouch = false;
-                secondTouch = true;
-                helpController.NextInstruction();                
-                Debug.Log("FIELDDIAGRAPHM nexthelp");
-            }
-            else if (secondTouch && scale >= maxScale)
-            {
-                secondTouch = false;
-                helpController.NextInstruction();
-            }
+        {
+            scale = currentRotation;
+            //if (currentRotation < oldRot && scale > minScale)
+            //{
+            //    scale -= 0.01f;
+            //}
+            //else if (currentRotation > oldRot && scale < maxScale)
+            //{
+            //    scale += 0.01f;
+            //}
+
             oldRot = currentRotation;
+            
         }
 
         //scale this masks scale and change rotation

@@ -8,12 +8,12 @@ public class TableHandler : MonoBehaviour
     [SerializeField]
     GameObject tableMover;
     [SerializeField]
-    LinearMapping tableNub;
+    CircularDrive tableNub;
     private float tableNubRot;
     [SerializeField]
     GameObject holderMover;
     [SerializeField]
-    LinearMapping holderNub;
+    CircularDrive holderNub;
     private float holderNubRot;
     [SerializeField]
     float movespeed;
@@ -43,8 +43,8 @@ public class TableHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tableNubRot = tableNub.value;
-        holderNubRot = holderNub.value;
+        tableNubRot = tableNub.outAngle;
+        holderNubRot = holderNub.outAngle;
         offsetY = Mathf.InverseLerp(maxTableY, minTableY, tableMover.transform.localPosition.y);
         offsetX = Mathf.InverseLerp(minHolderX, maxHolderX, holderMover.transform.localPosition.x);
     }
@@ -52,16 +52,14 @@ public class TableHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Y: " + offsetY);
-        //Debug.Log("X: " + offsetX);
-        currentRotTN = tableNub.value;
-        currentRotHN = holderNub.value;
+        currentRotTN = tableNub.outAngle;
+        currentRotHN = holderNub.outAngle;
         
         if (tableNubRot != currentRotTN)
         {                  
             //Move samplebed when rotating nub
             if (tableNubRot > currentRotTN && tableMover.transform.localPosition.y < maxTableY)
-            {                                
+            {
                 tableMover.transform.Translate(Vector3.up * movespeed * Time.deltaTime);  
             }
             else if (tableNubRot < currentRotTN && tableMover.transform.localPosition.y > minTableY)
@@ -99,8 +97,6 @@ public class TableHandler : MonoBehaviour
     {
         offsetY = Mathf.InverseLerp(maxTableY, minTableY, tableMover.transform.localPosition.y);
         offsetX = Mathf.InverseLerp(minHolderX, maxHolderX, holderMover.transform.localPosition.x);
-        //offsetX = 0;
-        //offsetY = 0;
         modifierX = x;
         modifierY = y;
     }

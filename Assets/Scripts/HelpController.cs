@@ -148,6 +148,7 @@ public class HelpController : MonoBehaviour
                 NextInstruction();
             if (fieldDiaphragm.GetComponent<CircularDrive>().outAngle < -100 && currentIndex == 9)
             {
+                Debug.Log("Pienennetty tarpeeksi");
                 NextInstruction();
                 tmp = CONDENSER.GetComponent<CircularDrive>().outAngle;
             }

@@ -9,11 +9,11 @@ using Valve.VR.InteractionSystem;
 public class MaskMover : MonoBehaviour
 {
     [SerializeField]
-    LinearMapping xNub;
+    CircularDrive xNub;
     private float xNubRot;
 
     [SerializeField]
-    LinearMapping yNub;
+    CircularDrive yNub;
     private float yNubRot;
 
     [SerializeField]
@@ -22,23 +22,19 @@ public class MaskMover : MonoBehaviour
     [SerializeField]
     HelpController helpController;
 
-    private float buffer = 0.05f;
-    private bool firstTouch = true;
-
     void Start()
     {
         //Otetaan nykyinen asento talteen
-        xNubRot = xNub.value;
-        yNubRot = yNub.value;
+        xNubRot = xNub.outAngle;
+        yNubRot = yNub.outAngle;
     }
 
     void Update()
     {
         //Otetaan asento
-        float xRot = xNub.value;
-        float yRot = yNub.value;
+        float xRot = xNub.outAngle;
+        float yRot = yNub.outAngle;
 
-        //Tarkastetaan miten se on muuttunut
         if (xRot > xNubRot)
         {
             transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
@@ -59,11 +55,5 @@ public class MaskMover : MonoBehaviour
         }
         yNubRot = yRot;
 
-        //Ohjeisiin liittyvä
-        if (transform.localPosition.x < buffer && transform.localPosition.x > -buffer && transform.localPosition.y < buffer && transform.localPosition.y > -buffer && firstTouch)
-        {
-            firstTouch = false;
-            helpController.NextInstruction();
-        }
     }
 }

@@ -118,23 +118,6 @@ public class FocusControl : MonoBehaviour
             SetFocus(fineFocusSpeed, MinFocus);
         }
 
-        //Otetaan nykyiseksi kierroksi viimeisin kierto asento
-        //currentCoarsePivotRot = coarsePivot.localRotation.eulerAngles;
-        //currentFinePivotRot = finePivot.localRotation.eulerAngles;
-
-        ////Jos kierto on muuttunut käännetään nappia
-        //if (currentCoarsePivotRot.z != coarsePivotRot.z)
-        //{           
-        //    RotatePivot(ref currentCoarsePivotRot, ref coarsePivotRot,ref coarsePivot, coarseSpeed);
-        //    SetFocus(coarseFocusSpeed, MinCoarseFocus);    
-        //}
-        //if (currentFinePivotRot.z != finePivotRot.z)
-        //{
-        //    RotatePivot(ref currentFinePivotRot, ref finePivotRot, ref finePivot, fineSpeed);            
-        //    SetFocus(fineFocusSpeed, MinFocus); 
-        //}
-
-        //Debug.Log(tableTransform.z);
     }
 
     /// <summary>
@@ -158,9 +141,6 @@ public class FocusControl : MonoBehaviour
             LowerTable(speed); //Lasketaan pöytää
         }
         
-        //Päivitetään napin kierto
-        //pivot.localEulerAngles = currentRot;
-        //pivotRot = currentRot;
     }
 
     public float GetTableHeightComparedToTarget()

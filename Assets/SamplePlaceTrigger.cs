@@ -166,7 +166,7 @@ public class SamplePlaceTrigger : MonoBehaviour
         if (inPlace)
         {
             MonitorRenderer.material.SetTexture("_MainTex", GetSampleImage(objectiveRevolver.GetCurrentMagnification()));
-            //MonitorRenderer.material.SetTextureOffset("_MainTex", new Vector2(table.OffsetX + currentSample.GetComponent<Sample>().OffsetStart.x, table.OffsetY + currentSample.GetComponent<Sample>().OffsetStart.y));
+            MonitorRenderer.material.SetTextureOffset("_MainTex", new Vector2(table.OffsetX + currentSample.GetComponent<Sample>().OffsetStart.x, table.OffsetY + currentSample.GetComponent<Sample>().OffsetStart.y));
             table.SetOffSet(currentSample.GetComponent<Sample>().OffsetStart.x, currentSample.GetComponent<Sample>().OffsetStart.y);
         }
     }
