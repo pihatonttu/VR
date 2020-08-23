@@ -261,7 +261,7 @@ namespace Valve.VR.InteractionSystem
 
 
             //Näytetään taas ohjekorostus jos sellainen on
-            if (GetComponent<Highlight>() && GetComponent<Highlight>().enabled)
+            if (GetComponent<Highlight>() && GetComponent<Highlight>().CurrentlyOn)
                 GetComponent<Highlight>().enabled = true;
         }
 

@@ -88,17 +88,6 @@ public class HelpController : MonoBehaviour
     private GameObject[] axisNobs;
     //------------------------------------------------------
 
-    //VANHOJA OHJEJUTTUJA
-
-    //[SerializeField]
-    //private GameObject slideHolder;//Näytteenpidin
-
-    //[SerializeField]
-    //private GameObject[] gameObjects;
-
-    //private GameObject currentObj;
-
-
     public int currentIndex = -1;
     private bool HelpFinished = false;
 
@@ -146,9 +135,8 @@ public class HelpController : MonoBehaviour
                 NextInstruction();
             if (revolver.GetComponent<RevolverControl>().GetCurrentMagnification() == 10 && currentIndex == 8)
                 NextInstruction();
-            if (fieldDiaphragm.GetComponent<CircularDrive>().outAngle < -100 && currentIndex == 9)
+            if (fieldDiaphragm.GetComponent<CircularDrive>().outAngle < 70 && currentIndex == 9)
             {
-                Debug.Log("Pienennetty tarpeeksi");
                 NextInstruction();
                 tmp = CONDENSER.GetComponent<CircularDrive>().outAngle;
             }
@@ -366,6 +354,7 @@ public class HelpController : MonoBehaviour
             item.GetComponent<Highlight>().OutlineColor = defaultColor;
             HiglightedItems.Remove(item);
             item.GetComponent<Highlight>().enabled = false;
+            item.GetComponent<Highlight>().CurrentlyOn = false;
         }
         else
             Debug.LogError("Korostus komponenttia ei löytynyt " + item.name);
@@ -381,6 +370,7 @@ public class HelpController : MonoBehaviour
                 items[i].GetComponent<Highlight>().OutlineWidth = ZERO;
                 items[i].GetComponent<Highlight>().OutlineColor = defaultColor;
                 items[i].GetComponent<Highlight>().enabled = false;
+                items[i].GetComponent<Highlight>().CurrentlyOn = false;
             }
             else
                 Debug.LogError("Korostus komponenttia ei löytynyt " + items[i].name);
@@ -397,6 +387,7 @@ public class HelpController : MonoBehaviour
                 item.GetComponent<Highlight>().enabled = true;
                 item.GetComponent<Highlight>().OutlineColor = highlightColor;
                 item.GetComponent<Highlight>().OutlineWidth = highlightWidth;
+                item.GetComponent<Highlight>().CurrentlyOn = true;
                 HiglightedItems.Add(item);
             } else
                 Debug.LogError("Korostus komponenttia ei löytynyt " + item.name);
@@ -409,6 +400,7 @@ public class HelpController : MonoBehaviour
         if (item.GetComponent<Highlight>())
         {
             item.GetComponent<Highlight>().enabled = true;
+            item.GetComponent<Highlight>().CurrentlyOn = true;
             item.GetComponent<Highlight>().OutlineColor = highlightColor;
             item.GetComponent<Highlight>().OutlineWidth = highlightWidth;
             HiglightedItems.Add(item);

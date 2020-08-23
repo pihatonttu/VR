@@ -105,15 +105,17 @@ namespace Valve.VR.InteractionSystem
 
 			if ( showHint )
 			{
-                hand.ShowGrabHint();
-			}
+                //hand.ShowGrabHint();
+                ControllerButtonHints.ShowButtonHint(hand, hand.uiInteractAction);
+            }
 		}
 
 
         //-------------------------------------------------
         protected virtual void OnHandHoverEnd( Hand hand )
 		{
-            hand.HideGrabHint();
+            ControllerButtonHints.HideButtonHint(hand, hand.uiInteractAction);
+            //hand.HideGrabHint();
 		}
 
 
@@ -125,7 +127,8 @@ namespace Valve.VR.InteractionSystem
             if (startingGrabType != GrabTypes.None)
             {
 				hand.AttachObject( gameObject, startingGrabType, attachmentFlags, attachmentOffset );
-                hand.HideGrabHint();
+                ControllerButtonHints.HideButtonHint(hand, hand.uiInteractAction);
+                //hand.HideGrabHint();
             }
 		}
 

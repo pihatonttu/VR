@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.vrscope.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\s717460\\Desktop\\VR-master (2)\\VR-master\\actions.json",
+      "action_manifest_path": "C:\\Users\\omistaja\\Desktop\\VR_Microscope-VR_implementation\\VRScope\\actions.json",
       "strings": {
         "en_us": {
           "name": "VRScope [Testing]"

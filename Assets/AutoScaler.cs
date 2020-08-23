@@ -5,11 +5,11 @@ public class AutoScaler : MonoBehaviour
     [SerializeField]
     private float defaultHeight = 1.8f;
     [SerializeField]
-    private Camera camera;
+    private Camera vrcamera;
 
     private void Resize()
     {
-        float headHeight = camera.transform.localPosition.y;
+        float headHeight = vrcamera.transform.localPosition.y;
         float scale = defaultHeight / headHeight;
         transform.localScale = Vector3.one * scale;
     }

@@ -94,6 +94,8 @@ namespace Valve.VR.InteractionSystem
 
         private bool needsUpdate;
 
+        public bool CurrentlyOn = false;
+
         void Awake()
         {
 
