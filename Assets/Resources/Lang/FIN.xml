@@ -3,72 +3,91 @@
   
   <Finnish>
   
+    <string name="WELCOME_HEADER">Tervetuloa!</string>
+    <string name="WELCOME">Tämä on VR oppimisympäristö mikroskoopin käyttöä varten</string>
+    <string name="WELCOME_INFO">Tässä tilassa on kolme erilaista harjoituspistettä, joissa voit harjoitella käsiohjaimien käyttöä ja VR-ympäristössä liikkumista. Kun olet valmis, voit siirtyä pelaamaan.</string>
+    
+    <string name="STARTBUTTON">Siirry peliin</string>
+    
+    <string name="SELECT_LANGUAGE">Kielen valinta</string>
+    
+    <string name="MOVINGTUTORIAL">Liikkuminen</string>
+    <string name="MOVINGTUTORIAL_INFO">Liiku pelimaailmassa osoittamalla haluamaasi paikkaan ja painamalla kosketuspaneelia</string>
+	  <string name="MOVINGTUTORIAL_INFO2">Voit tarvittaessa liikkua pelimaailmassa myös ottamalla itse pieniä askeleita, jos pelialueellasi ei ole esteitä.</string>
+    
+    <string name="SAMPLETUTORIAL">Näytteisiin tarttuminen</string>
+    <string name="SAMPLETUTORIAL_INFO">Tartut näytteisiin samalla tavalla kuin esineisiin edellisessä vaiheessa</string>
+	  <string name="SAMPLETUTORIAL_INFO2">Tässä voit kokeilla näytteiden siirtämistä pyöreälle pöydälle. Näyte asettuu paikoilleen, kun sen vie tarpeeksi lähelle pyöreää pöytää.</string>
+    
+    <string name="GRAPPINGTUTORIAL">Esineisiin tarttuminen</string>
+    <string name="GRAPPINGTUTORIAL_INFO">Laita ohjain tartuttavan esineen lähelle, jolloin esine ja painettava näppäin korostuvat.</string>
+	  <string name="GRAPPINGTUTORIAL_INFO2">Tartu esineeseen painamalla näppäintä, jonka jälkeen voit siirtää sen haluamaasi kohtaan.</string>
+ 
+    <string name="BUTTONSTUTORIAL">Säätimien käyttö</string>
+    <string name="BUTTONSTUTORIAL_INFO">Vie ohjain lähelle haluttua säädintä, jolloin säädin ja ohjaimen näppäin korostuvat.</string>
+	  <string name="BUTTONSTUTORIAL_INFO2">Tässä alla muutama rullia ja nappeja, joilla voit testata kuinka ne toimivat.</string>
+
+    <string name="BUTTONSTUTORIAL_SWITCH">Napit</string>
+    <string name="BUTTONSTUTORIAL_SWITCH_INFO">Nappeja voit painaa viemällä ohjaimen sen lähelle niin, että nappi korostuu ja sen jälkeen painamalla tarttumisnäppäintä</string>
+
+    <string name="BUTTONSTUTORIAL_KNOB">Rullat</string>
+    <string name="BUTTONSTUTORIAL_KNOB_INFO">Rullia voidaan pyörittää viemällä ohjain rullan päälle niin, että se korostuu, jonka jälkeen tarttumisnappia pohjassa pitämällä voit pyöritellä sitä.</string>
+
+    <string name="WALLTEXT_LEFT">Köhleröinti</string>
+    <string name="WALLTEXT_LEFT_INFO">Pelin tarkoituksena on opetella köhleröinti eli valaistusjärjestelmän ihanteellinen säätö, joka tuottaa parhaan mahdollisen mikroskooppikuvan</string>
+
+    <string name="WALLTEXT_RIGHT">Köhleröinti vaiheet</string>
+    <string name="WALLTEXT_RIGHT_INFO">1. Poista huppu\n2. Laita valo päälle\n3. Aseta näyte paikoilleen\n4. Säädä okulaarit sopiviksi\n5. Säädä valon kirkkautta\n6. Nosta kondensorin linssi ylös\n7. Valitse 10x objektiivi ja tarkenna näyte tarkaksi\n8. Sulje kenttähimmennintä \n9. Säädä kondensoria kunnes himmentimen reunat ovat terävät\n10. Keskiöi himmentimen kuvio\n11. Avaa kenttähimmennintä kunnes reunat häviävät\n12. Tarkenna vielä kuvaa\n13. Vaihda objektiivia \n14. Olet valmis</string>
+	  
+    <string name="TABLET_CONTROLLER_UPPER">Kosketuspaneeli</string>
+    <string name="TABLET_CONTROLLER_UPPER_INFO">Osoittamalla ohjaimella haluamaasi paikkaan ja kosketuspaneelia painamalla voit siirtyä paikasta toiseen</string>
+	  
+    <string name="TABLET_CONTROLLER_LOWER">Liipaisin</string>
+    <string name="TABLET_CONTROLLER_LOWER_INFO">Pitämällä pohjassa voit ottaa kiinni esineistä ja mikroskoopin säätimistä</string>
     
 	  
-    <string name="CONTROLS">Kontrollit</string>
-	  
-    <string name="TOUCH">Kosketusalusta</string>
-	  <string name="TOUCH_INFO">Kosketusalustaa koskettamalla saat esiin laserosoittimen</string>
-    <string name="GRAP">Liipaisin</string>
-	  <string name="GRAP_INFO">Pitämällä pohjassa voit ottaa kiinni esineistä ja mikroskoopin säätimistä</string>      
-	  <string name="SELECT_LANGUAGE">Kielen valinta</string>
-
-
-    <string name="HOOD"></string>
-    <string name="HOOD_HELP">1. Aloita poistamalla mikroskooppia suojaava huppu</string>
+    <string name="HOOD_HELP">1.	Aloita poistamalla mikroskooppia suojaava huppu</string>
     <string name="HOOD_INFO"></string>
     
-	  <string name="LIGHT_SWITCH"></string>
 	  <string name="LIGHT_SWITCH_HELP">2. Laita mikroskoopin valo päälle painamalla virtakytkintä</string>
 	  <string name="LIGHT_SWITCH_INFO">Valonlähde on yleensä halogeeni- tai LED-valo.</string>
 
-    <string name="LIGHT_CONTROL"></string>
-    <string name="LIGHT_CONTROL_HELP">2. Säädä valon voimakkuutta valonsäädintä käyttäen</string>
-    <string name="LIGHT_CONTROL_INFO">Näytteessä tulee olla tarpeeksi valoa, että näyte on selkeästi näkyvissä</string>
+    <string name="LIGHT_CONTROL_HELP">2. Säädä valon voimakkuutta</string>
+    <string name="LIGHT_CONTROL_INFO">Näytteeseen täytyy kohdistua tarpeeksi valoa, että näyte näkyy selkeästi.</string>
 
-    <string name="SLIDE_HOLDER"></string>
     <string name="SLIDE_HOLDER_HELP">3. Aseta näytelasi ristisiirtopöydälle</string>
     <string name="SLIDE_HOLDER_INFO">Näytteenpitimen tehtävänä on pitää näyte paikallaan</string>
 
-    <string name="MECHANICAL_STAGE"></string>
-    <string name="MECHANICAL_STAGE_HELP">3. Siirrä Ristisiirtopöytää saadaksesi näyte näkyville</string>
+    <string name="MECHANICAL_STAGE_HELP">3. Siirrä Ristisiirtopöytää niin, että näet kudosnäytteen keskellä näkökenttää.</string>
     <string name="MECHANICAL_STAGE_INFO">Ristisiirtopöytää voi liikuttaa x- ja z-suunnissa</string>
-    
-    <string name="OCULARS"></string>
-    <string name="OCULARS_HELP">4. Kokeile okulaarien säätämistä. Okulaarit tulisi säätää omille silmille sopivaksi</string>
-    <string name="OCULARS_INFO">Tässä versiossa sovellusta, objektiivien läpi katsominen ei ole mahdollista</string>
 
-    <string name="LIGHT_CONTROL2"></string>
+    <string name="OCULARS_HELP">4. Kokeile okulaarien säätämistä. Okulaarit säädetään niin, että näkökenttä on yhtenäinen.</string>
+    <string name="OCULARS_INFO">Tässä versiossa sovellusta, okulaarien kautta katsominen ei ole mahdollista</string>
+
     <string name="LIGHT_CONTROL2_HELP">5. Säädä tarvittaessa valon voimakkuutta näytteelle sopivaksi</string>
 
-    <string name="CONDENSER"></string>
-    <string name="CONDENSER_HELP">6. Tässä vaiheessa pitäisi nostaa kondensorin linssi ylös.</string>
-    <string name="CONDENSER_INFO">Kosketa kondensoria päästäksesi eteenpäin</string>
+    <string name="CONDENSER_HELP">6. Tässä vaiheessa pitäisi nostaa kondensori ylös.</string>
+    <string name="CONDENSER_INFO">Kosketa kondensorin säädintä päästäksesi eteenpäin.</string>
 
     <string name="OBJECTIVE_REVOLVER_HELP">7. Valitse köhleröintiin 10x objektiivi</string>
-    
-    <string name="FIELD_DIAPHRAGM"></string>
+
     <string name="FIELD_DIAPHRAGM_HELP">8. Sulje kenttähimmennintä vähintään puolet näkökentästä</string>
     <string name="FIELD_DIAPHRAGM_INFO">Kenttähimmentimen tehtävänä on säädellä näytteeseen osuvan valopylvään leveyttä sekä vähentää valon heijastuksia sekä sirontaa parantaen näin kuvan laatua</string>
 
-    <string name="CONDENSER2"></string>
-    <string name="CONDENSER2_HELP">9. Tässä vaiheessa tulisi säätää kondensorin korkeudella kenttähimmentimen reunat teräväksi</string>
+    <string name="CONDENSER2_HELP">9. Tässä vaiheessa tulisi säätää kondensorin korkeutta, jotta saat kenttähimmentimen reunat teräväksi</string>
     <string name="CONDENSER2_INFO">Kondensorin tehtävänä keskittää valo tasaisesti näytteeseen. Kosketa kondensoria päästäksesi eteenpäin</string>
 
-    <string name="CENTRALIZING_CONTROLS"></string>
     <string name="CENTRALIZING_CONTROLS_HELP">10. Kierrä keskiöintiruuveja, kunnes kenttähimmentimen reunat on keskellä näkökenttää</string>
     <string name="CENTRALIZING_CONTROLS_INFO">Keskiöintiruuveilla keskitetään kuva keskelle näkökenttää</string>
 
     <string name="FIELD_DIAPHRAGM2_HELP">11. Avaa kenttähimmenintä niin, että kenttähimmentimen reunat eivät ole näkyvissä</string>
 
-    <string name="COARSE_FOCUS"></string>
     <string name="COARSE_FOCUS_HELP">12. Tarkenna kuva tarvittaessa karkea- ja hienosäätörullista</string>
     <string name="COARSE_FOCUS_INFO">Säätörullista tarkennetaan kuva teräväksi</string>
 
     <string name="OBJECTIVE_REVOLVER2_HELP">13. Kokeile eri suuruisia objektiiveja</string>
-    <string name="OBJECTIVE_REVOLVER2_INFO">Objektiivirevolveriin voi vaihtaa käyttötarkoituksen mukaiset objektiivit</string>
+    <string name="OBJECTIVE_REVOLVER2_INFO">Objektiivirevolverin avulla voit vaihtaa haluamasi suurennoksen.</string>
 
-    <string name="DONE"></string>
     <string name="DONE_HELP">Mikroskoopin köhleröinti on nyt valmis! Hienoa! Voit nyt tutkia näytettä ja tarvittaessa vaihtaa näytettä</string>
 
     <string name="EMPTY"></string>
