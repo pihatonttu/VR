@@ -262,11 +262,6 @@ public class HelpController : MonoBehaviour
                 break;
         }
         
-        //if (currentIndex < gameObjects.Length - 1)
-        //{       
-        //    currentIndex++;
-        //    currentObj = gameObjects[currentIndex];
-        //}
         
         
     }
