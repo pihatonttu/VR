@@ -41,10 +41,6 @@
       "requirement": "optional"
     },
     {
-      "name": "/actions/default/in/Touch",
-      "type": "boolean"
-    },
-    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
